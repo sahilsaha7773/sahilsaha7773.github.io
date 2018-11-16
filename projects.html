@@ -1,12 +1,57 @@
 ---
 layout: default
 ---
+<script>
+  var $menu = $('.Menu-list'),
+    $item = $('.Menu-list-item'),
+    w = $(window).width(), //window width
+    h = $(window).height(); //window height
+
+$(window).on('mousemove', function(e) {
+  var offsetX = 0.5 - e.pageX / w, //cursor position X
+      offsetY = 0.5 - e.pageY / h, //cursor position Y
+      dy = e.pageY - h / 2, //@h/2 = center of poster
+      dx = e.pageX - w / 2, //@w/2 = center of poster
+      theta = Math.atan2(dy, dx), //angle between cursor and center of poster in RAD
+      angle = theta * 180 / Math.PI - 90, //convert rad in degrees
+      offsetPoster = $menu.data('offset'),
+      transformPoster = 'translate3d(0, ' + -offsetX * offsetPoster + 'px, 0) rotateX(' + (-offsetY * offsetPoster) + 'deg) rotateY(' + (offsetX * (offsetPoster * 2)) + 'deg)'; //poster transform
+
+  //get angle between 0-360
+  if (angle < 0) {
+    angle = angle + 360;
+  }
+
+  //poster transform
+  $menu.css('transform', transformPoster);
+
+  //parallax for each layer
+  $item.each(function() {
+    var $this = $(this),
+        offsetLayer = $this.data('offset') || 0,
+        transformLayer = 'translate3d(' + offsetX * offsetLayer + 'px, ' + offsetY * offsetLayer + 'px, 20px)';
+
+    $this.css('transform', transformLayer);
+  });
+});
+</script>  
 <a id="backtotop_button"></a>
 <section id=back class="row">
   <link rel="stylesheet" type="text/css" href="project.css">
-  <div class="container">
-    <h3 align="center" class="uppercase mb0"><font color="white" size="20">Students Projects</font></h3>
-  </div>
+  <div class="Menu">
+  <ul class="Menu-list" data-offset="10">
+    <li class="Menu-list-item" data-offset="20" onclick>
+      Student
+      <span class="Mask"><span>Student</span></span>
+      <span class="Mask"><span>Student</span></span>
+    </li>
+    <li class="Menu-list-item" data-offset="16" onclick>
+      Projects
+      <span class="Mask"><span>Projects</span></span>
+      <span class="Mask"><span>Projects</span></span>
+    </li>
+    </ul>
+</div>
 </section>
 
 <section class="projects pt48">
