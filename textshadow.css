@@ -1,3 +1,4 @@
 .texts {
-      text-shadow: 5px 5px 30px #000000;      
+      text-shadow: 5px 5px 30px #000000;
+      z-index: -1;
 }
