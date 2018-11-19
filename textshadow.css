@@ -1,9 +1,11 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,900);
 .texts {
+      text-shadow: 5px 5px 30px #000000;
+      z-index: -1;
+}
+.back {
       background: 
       linear-gradient(
       rgba(0, 0, 0, 0.6),
-      rgba(0, 0, 0, 0.6)),
-      text-shadow: 5px 5px 30px #000000;
-      z-index: -1;
+      rgba(0, 0, 0, 0.6));
 }
