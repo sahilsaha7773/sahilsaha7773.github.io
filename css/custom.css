@@ -118,10 +118,7 @@ p.person-name {
   max-width: 300px;
 }
 
-.single-mentor:hover > img {
-  filter: brightness(50%);
-  transition: all 0.6s;
-}
+
 
 #contributors .single-mentor img {
   height: 120px;
