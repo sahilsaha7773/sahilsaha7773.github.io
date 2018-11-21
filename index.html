@@ -176,9 +176,9 @@ $(document).ready(function(){
           <img src="img/team/{{team.image}}" alt="{{ team.name }}" /> {% else %}
           <img src="img/students/member.png" alt="{{ team.name }}" /> {% endif
           %}
-
+        </div>
           <p class="team_member_name">{{ team.name }}</p>
-
+         <div class="card single-mentor text-center">
           <ul class="list-inline social-list social-overlay-list team_ul">
             <p class="team_member_designation">{{ team.designation }}</p>
             {% if team.github %}
@@ -195,6 +195,7 @@ $(document).ready(function(){
             </a>
             {% endif %}
           </ul>
+        </div>
         </div>
       </div>
       {% endfor %}
