@@ -494,14 +494,13 @@ $(document).ready(function(){
 
       <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 text-center">
         <div class="card single-mentor">
+          <div class="mentor">
           {% if mentor.image %}
           <img class="mentor-img" src="img/mentors/{{mentor.image}}" alt="{{ mentor.name }}" />
           {% else %}
           <img src="img/mentors/member.png" alt="{{ mentor.name }}" /> {% endif
           %}
-          <p class="person-name">{{ mentor.name }}</p>
-
-          <ul class="list-inline social-list social-overlay-list">
+             <ul class="list-inline social-list social-overlay-list">
             {% if mentor.github %}
             <a href="https://github.com/{{mentor.github}}" class="icon-a" target="_blank" rel="noopener">
               <i class="ti-github"></i>
@@ -524,6 +523,10 @@ $(document).ready(function(){
             </a>
             {% endif %}
           </ul>
+          </div>  
+          <p class="person-name">{{ mentor.name }}</p>
+
+         
         </div>
       </div>
       {% endfor %}
