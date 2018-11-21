@@ -172,10 +172,12 @@ $(document).ready(function(){
       {% for team in site.data.team limit:30 %}
       <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
         <div class="card single-mentor text-center">
+          <div class="mentor">
           {% if team.image %}
           <img src="img/team/{{team.image}}" alt="{{ team.name }}" /> {% else %}
           <img src="img/students/member.png" alt="{{ team.name }}" /> {% endif
           %}
+          </div>
           <p class="team_member_name">{{ team.name }}</p>
     
           <ul class="list-inline social-list social-overlay-list team_ul">
