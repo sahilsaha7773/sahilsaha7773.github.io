@@ -54,7 +54,7 @@ p.person-name {
   font-size: 16px;
 }
 
-.single-mentor {
+.mentor {
   position: relative;
   border: 2px solid #ff3232;
   border-radius: 10px;
@@ -62,8 +62,8 @@ p.person-name {
     margin: 10px;
     z-index: 1;
 }
-.single-mentor:before,
-.single-mentor:after{
+.mentor:before,
+.mentor:after{
     content: "";
     width: 100%;
     height: 104%;
@@ -75,21 +75,21 @@ p.person-name {
     transform: translateY(-50%) scaleX(0.3);
     transition: all 0.3s ease 0s;
 }
-.single-mentor:after{
+.mentor:after{
     width: 106%;
     left: 50%;
     transform: translate(-50%, -50%) scaleY(0.25);
 }
-.single-mentor:hover:before{ transform: translateY(-50%) scaleX(0.7); }
-.single-mentor:hover:after{ transform: translate(-50%, -50%) scaleY(0.7); }
-.single-mentor img{
+.mentor:hover:before{ transform: translateY(-50%) scaleX(0.7); }
+.mentor:hover:after{ transform: translate(-50%, -50%) scaleY(0.7); }
+.mentor img{
     width: 100%;
     height: auto;
     border-radius: 10px;
     transition: all 0.3s ease 0s;
 }
 
-.single-mentor .social-overlay-list {
+.mentor .social-overlay-list {
     width: 93%;
     padding: 25px 0 10px;
     background: #ff4444;
