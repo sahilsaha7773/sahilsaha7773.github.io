@@ -107,9 +107,6 @@ p.person-name {
   color: white;
 }
 
-.single-mentor .social-overlay-list a:hover {
-  opacity: 0.5;
-}
 
 .single-mentor:hover .social-overlay-list {
   opacity: 1;
