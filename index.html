@@ -549,13 +549,13 @@ $(document).ready(function(){
 
       <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 text-center">
         <div class="card single-mentor">
+          <div class="mentor">
           {% if student.image %}
           <img class="mentor-img" src="img/students/{{student.image}}" alt="{{ student.name }}" />
           {% else %}
           <img src="img/mentors/member.png" alt="{{ student.name }}" /> {% endif
           %}
-          <p class="student_name">{{ student.name }}</p>
-
+          
           <ul class="list-inline social-list social-overlay-list">
             {% if student.github %}
             <a href="https://github.com/{{student.github}}" class="icon-a" target="_blank" rel="noopener">
@@ -579,6 +579,9 @@ $(document).ready(function(){
             </a>
             {% endif %}
           </ul>
+          </div>  
+          <p class="student_name">{{ student.name }}</p>
+
         </div>
       </div>
       {% endfor %}
