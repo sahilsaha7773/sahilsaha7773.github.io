@@ -117,7 +117,9 @@ p.person-name {
   height: 240px;
   max-width: 300px;
 }
-
+ .social-overlay-list a:hover {
+  opacity: 0.5;
+}
 
 
 #contributors .single-mentor img {
