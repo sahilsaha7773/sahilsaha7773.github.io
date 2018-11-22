@@ -53,6 +53,53 @@ p.person-name {
 [class*=" ti-"] {
   font-size: 16px;
 }
+.social-overlay-list {
+  position: relative;
+  top: -165px;
+  background: transparent;
+  padding: 5px 10px;
+  width: 100%;
+  opacity: 0;
+  transition: all 0.6s;
+}
+
+.single-mentor .social-overlay-list a {
+  color: white;
+}
+
+.single-mentor .social-overlay-list a:hover {
+  opacity: 0.5;
+}
+
+.single-mentor:hover .social-overlay-list {
+  opacity: 1;
+}
+
+.single-mentor img {
+  width: 240px;
+  height: 240px;
+  max-width: 300px;
+}
+
+.single-mentor:hover > img {
+  filter: brightness(50%);
+  transition: all 0.6s;
+}
+
+#contributors .single-mentor img {
+  height: 120px;
+}
+
+#contributors .social-overlay-list {
+  position: absolute;
+  top: 40px;
+}
+
+.contributor {
+  margin-bottom: 3%;
+  font-size: 16px;
+}
+
 
 .mentor {
   position: relative;
