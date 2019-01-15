@@ -1,633 +1,429 @@
----
-layout: default
----
-<link rel="stylesheet" type="text/css" href="textshadow.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script>
-$(document).ready(function(){
-  // Add smooth scrolling to all links
-  $("a").on('click', function(event) {
-
-    // Make sure this.hash has a value before overriding default behavior
-    if (this.hash !== "") {
-      // Prevent default anchor click behavior
-      event.preventDefault();
-
-      // Store hash
-      var hash = this.hash;
-
-      // Using jQuery's animate() method to add smooth page scroll
-      // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
-      $('html, body').animate({
-        scrollTop: $(hash).offset().top
-      }, 2000, function(){
-
-        // Add hash (#) to URL when done scrolling (default click behavior)
-        window.location.hash = hash;
-      });
-    } // End if
-  });
-});
-</script>
-<a id="backtotop_button"></a>
-<section class="cover fullscreen image-slider slider-all-controls controls-inside parallax">
-  <ul class="slides">
-    <li class="overlay image-bg bg-light">
-      <div class="background-image-holder shadow">
-        <img alt="image" class="background-image" src="img/home23.jpg" />
-      </div>
-      <div class="container v-align-transform">
-        <div class="row">
-          <div class="col-sm-10 col-sm-offset-1 text-center" id="new_text">
-            <h1 class="mb40 mb-xs-16 large texts" id="new_text">
-              We are <br />FOSSASIA
-            </h1>
-            <h6 class="uppercase mb16 texts" id="new_text">
-              Creating collaborative open-source technologies.
-            </h6>
-            <p class="lead mb40 texts" id="new_text">
-              Connecting Open Tech Communities all over Asia with Developers and
-              Creators <br />
-              in the FOSSASIA Network.
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+        <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+        <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+        <title>Sahil Saha's Portfolio</title>
+        <link href="https://fonts.googleapis.com/css?family=Handlee" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <style>
+            html {
+                margin: 0;
+                 padding: 0;
+                scroll-behavior: smooth;
+                }
+body {
+    font-family: 'Handlee', cursive;
+    font-size: 13pt;
+    background-color: #efefef;
+    padding: 10px;
+    margin: 0;
+}
+            .column2 {
+    float: left;
+    width: 25%;
+}
+/* Clear floats after rows */ 
+.row2:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+/* Content */
+.content2 {
+    background-color: white;
+    padding: 10px;
+}
+h1 {
+    font-size: 15pt;
+    color: #20bcd5;
+    text-align: center;
+    padding: 18px 0 18px 0;
+    margin: 30px 0 10px 0;
+}
+h1 span {
+    border: 4px dashed #20bcd5;
+    padding: 10px;
+}
+p {
+    padding: 0;
+    margin: 0;
+}
+.img-circle {
+    border: 3px solid white;
+    border-radius: 50%;
+}
+.section {
+    background-color: #fff;
+    padding: 15px;
+    margin-bottom: 10px;
+    margin-top: 60px;
+    border-radius: 10px;
+ }
+#header {
+    background-image: url("https://www.sololearn.com/Uploads/header.jpg");
+    background-size: cover;
+}
+#header img {
+    display: block;
+    width: 80px;
+    height: 80px;
+    margin: auto;
+}
+#header p {
+    font-size: 25pt;
+    color: #3b464c;
+    padding-top: 5px;
+    margin: 0;
+    font-weight: bold;
+    text-align: center;
+}
+.quote {
+    font-size: 12pt;
+    text-align: right;
+    margin-top: 10px;
+}
+table {
+    width: 100%;
+}
+table, th, td {
+    border: 2px solid #cecece;
+    border-collapse: collapse;
+    text-align: center;
+    table-layout: fixed;
+}
+.selected {
+    background-color: #f36f48;
+    font-weight: bold;
+    color: white;
+}
+li {
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+progress {
+    width: 70%;
+    height: 20px;
+    color: #3fb6b2;
+    background: #efefef;
+}
+progress::-webkit-progress-bar {
+    background: #efefef;
+}
+progress::-webkit-progress-value {
+    background: #3fb6b2;
+} 
+progress::-moz-progress-bar {
+    color: #3fb6b2;
+    background: #efefef;
+}
+iframe, audio {
+    display: block;
+    margin: 0 auto;
+    border: 3px solid #3fb6b2;
+}
+hr {
+    border: 0;
+    height: 1px;
+    background: #f36f48;
+}
+form {
+    text-align: center;
+    margin-top: 0;
+}
+.submit {
+    background-color: #3fb6b2;
+    padding: 12px 45px;
+    border-radius: 5px;
+    cursor: pointer;
+    color: #ffffff;
+    border: none;
+    outline: none;
+    margin: 0;
+    font-weight: bold;
+}
+.submit:hover {
+    background-color: #43a09d;
+}
+textarea {
+    height: 100px;
+}
+input, textarea {
+    margin-bottom: 10px;
+    font-size: 11pt;
+    padding: 15px 10px 10px;
+    border: 1px solid #cecece;
+    background-color: #efefef;
+    color: #787575;
+    border-radius: 5px;
+    width: 70%;
+    outline: none;
+}
+.face {
+    transform: scale(0.4);
+    margin: 0 auto;
+    display: block;
+    margin-top: -35px;
+    margin-bottom: -25px;
+}
+ #app {
+    text-align: center;
+    font-size: 25pt;
+            }
+#contacts img {
+    height: 50px;
+    width: 50px;
+    margin-left: 7px;
+    margin-right: 7px;
+}
+#contacts a {
+    text-decoration: none;
+}
+#contacts img:hover {
+    opacity: 0.8;
+}
+#contacts {
+    text-align: center;
+}
+.copyright {
+    font-size: 8pt;
+    text-align: right;
+    padding-bottom: 10px;
+    color: grey;
+}
+            .nav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+    position: fixed; /* Set the navbar to fixed position */
+    top: 0; /* Position the navbar at the top of the page */
+    width: 100%; /* Full width */            
+}
+.opt {
+    float: left;
+    margin-left:5px;
+}
+.opt .bu {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+.opt .bu:hover:not(.active) {
+    background-color: #111;
+}
+.active {
+    background-color: #4CAF50;
+}
+            .progress {
+  height: 35px;
+}
+.progress .skill {
+  font: normal 12px "Open Sans Web";
+  line-height: 35px;
+  padding: 0;
+  margin: 0 0 0 20px;
+  text-transform: uppercase;
+}
+.progress .skill .val {
+  float: right;
+  font-style: normal;
+  margin: 0 20px 0 0;
+}
+.progress-bar {
+  text-align: left;
+  transition-duration: 3s;
+}
+        </style>    
+    </head>    
+    <body>
+        <ul class="nav">
+        <li class="opt"><a class="bu" href="#about">About</a></li>
+        <li class="opt"><a class="bu" href="#projects">Projects</a></li>
+        <li class="opt"><a class="bu" href="#skills">Skills</a></li>
+        </ul>
+        <!-- header start -->
+        <div id="header" class="section">
+            <img alt="" class="img-circle" src="Sahil.jpg">
+            <p>Sahil Saha</p>
+        </div>
+        <div id="app"></div>
+        <script src='core.js'></script>
+        <script type="text/javascript">
+            var app = document.getElementById('app');
+            var typewriter = new Typewriter(app, {
+            loop: true
+            });
+            typewriter.typeString('web developer')
+            .pauseFor(2500)
+            .deleteAll()
+             typewriter.typeString('open source contributor')
+            .pauseFor(2500)
+            .deleteAll()
+            .typeString('android developer')
+            .pauseFor(2500)
+            .deleteAll()
+            .typeString('<strong>a 16 year old</strong>')
+            .pauseFor(2500)
+            .start();
+        </script>
+        <!-- header end -->
+        
+        <!-- About Me 
+ start -->
+        <div class="section" id="about">
+            <h1><span>About Me</span></h1>
+            <p>
+                Hey! I'm <strong>Sahil</strong>. Coding has changed my world. It's not just about developing. Learning to code gave me <i>problem-solving skills</i> and a way to communicate with others on a technical level. I enjoy programming the most. It does not seem to be a task I just do it as I love it. I can develop websites and make usseful android apps. And I learned it all at <strong>Online</strong>.
             </p>
-            <a class="btn btn-lg btn-filled" href="https://fossasia.org">Start Exploring</a>
-          </div>
+            <p class="quote">“The most disastrous thing that you can ever learn is your first programming language.” ― Alan Kay</p>
         </div>
-        <!-- end of row -->
-      </div>
-      <!-- end of container -->
-    </li>
-    <li class="overlay image-bg">
-      <div class="background-image-holder">
-        <img alt="image" class="background-image" src="img/home22.jpg" />
-      </div>
-      <div class="container v-align-transform">
-        <div class="row">
-          <div class="col-sm-offset-1 text-center col-sm-10">
-            <h1 class="mb40 mb-xs-16 large texts" id="new_text">
-              Google Code-In with FOSSASIA 2018
-            </h1>
-            <h6 class="uppercase mb16 texts" id="new_text">
-              Offering a range of exciting tasks involving
-            </h6>
-            <p class="lead mb40 texts" id="new_text">
-              Coding, Documentation, Outreach, Design, Quality Control <br />and
-              much more!
-            </p>
-            <a class="btn btn-lg btn-filled" href="https://codein.withgoogle.com/organizations/fossasia/">Participate</a>
-          </div>
-        </div>
-        <!-- end of row -->
-      </div>
-      <!-- end of container -->
-    </li>
-    <li class="overlay image-bg">
-      <div class="background-image-holder">
-        <img alt="image" class="background-image" src="img/home21.jpg" />
-      </div>
-      <div class="container v-align-transform">
-        <div class="row">
-          <div class="col-sm-offset-1 text-center col-sm-10">
-            <h1 class="mb40 mb-xs-16 large texts" id="new_text">
-              FOSSASIA builds exciting Projects
-            </h1>
-            <h6 class="uppercase mb16 texts" id="new_text">All open source</h6>
-            <p class="lead mb40 texts" id="new_text">
-              Even you can contribute <br />
-            </p>
-            <a class="btn btn-lg btn-filled" href="https://github.com/fossasia">Explore Projects</a>
-          </div>
-        </div>
-        <!-- end of row -->
-      </div>
-    </li>
-    <li class="overlay image-bg">
-      <div class="background-image-holder">
-        <img alt="image" class="background-image" src="img/home20.jpg" />
-      </div>
-      <div class="container v-align-transform">
-        <div class="row">
-          <div class="col-sm-offset-1 text-center col-sm-10">
-            <h1 class="mb40 mb-xs-16 large texts" id="new_text">
-              Last Year, we broke Google Code-In records
-            </h1>
-            <h6 class="uppercase mb16 texts" id="new_text">
-              With over 900 students and 90 mentors
-            </h6>
-            <p class="lead mb40 texts" id="new_text">
-              FOSSASIA had over 1500 completed tasks... stunning isn't it?!
-              <br />
-            </p>
-            <a class="btn btn-lg btn-filled" href="https://opensource.googleblog.com/2018/01/google-code-in-2017-winners.html">Learn
-              More</a>
-          </div>
-        </div>
-      </div>
-    </li>
-  </ul>
-  <!-- end of container -->
-</section>
-<section class="bg-secondary pb0" id="welcome">
-  <div class="container">
-    <div class="row mb80 mb-xs-0">
-      <div class="col-md-8 col-md-offset-2 text-center">
-        <h1>What is open source?</h1>
-        <p>
-          In general, open source refers to any program whose source code is
-          made available for use or modification as users or other developers
-          see fit. Open source software is usually developed as a public
-          collaboration and made freely available.
-        </p>
-      </div>
-      <br />
-    </div>
-    <!-- end of row -->
-    <div class="row v-align-children">
-      <div class="col-md-7 col-sm-6 text-center mb-xs-24">
-
-        <img class="cast-shadow" alt="Screenshot" src="https://www.ost.agency/wp-content/uploads/2017/12/lg.png" />
-      </div>
-      <div class="col-md-4 col-md-offset-1 col-sm-5 col-sm-offset-1">
-        <h3>What is FOSSASIA?</h3>
-        <p>
-          FOSSASIA develops software and hardware and cooperates with Open Tech
-          projects. Please check out our Github and FOSSASIA Labs.
-        </p>
-
-        <a class="btn btn-lg" href="https://fossasia.org/" target="_blank">Explore Fossasia 🌏</a>
-      </div>
-    </div>
-  </div>
-  <!-- end of container -->
-</section>
-<section class="notranslate" id="team">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-8 col-md-offset-2 text-center">
-        <h1>Team</h1>
-      </div>
-    </div>
-    <!-- end of row -->
-    <div class="row" style="margin-top: 60px;">
-      {% for team in site.data.team limit:30 %}
-      <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 text-center">
-        <div class="card single-mentor">
-          <div class="mentor">
-          {% if team.image %}
-          <img src="img/team/{{team.image}}" alt="{{ team.name }}" /> {% else %}
-          <img src="img/students/member.png" alt="{{ team.name }}" /> {% endif
-          %}
-          <ul class="list-inline social-list social-overlay-list team_ul">
-            <p class="team_member_designation">{{ team.designation }}</p>
-            {% if team.github %}
-            <a href="https://github.com/{{team.github}}" class="icon-a" target="_blank">
-              <i class="ti-github"></i>
-            </a>
-            {% endif %} {% if team.twitter %}
-            <a href="https://twitter.com/{{ team.twitter }}" class="icon-a" target="_blank">
-              <i class="ti-twitter-alt"></i>
-            </a>
-            {% endif %} {% if team.linkedin %}
-            <a href="https://linkedin.com/in/{{ team.linkedin }}" class="icon-a" target="_blank">
-              <i class="ti-linkedin"></i>
-            </a>
-            {% endif %}
-          </ul>
-          </div>
-          <p class="team_member_name">{{ team.name }}</p>
-    
-          
-        </div>
-      </div>
-      {% endfor %}
-      <!-- end of row -->
-    </div>
-  </div>
-  <!-- end of container -->
-</section>
-
-<section id="connect">
-  <div class="container" id="social_box">
-    <div class="row mb80 mb-xs-0">
-      <div class="col-md-8 col-md-offset-2 text-center">
-        <h1>Connect with Fossasia on Social Media</h1>
-        <p>Be sure to follow us on social media!</p>
-        <p class="large">
-          <a href="https://www.facebook.com/fossasia/" class="ti-facebook lgi" target="_blank"></a>
-          <a href="https://twitter.com/fossasia" class="ti-twitter lgi" target="_blank"></a>
-          <a href="https://www.instagram.com/fossasia/" target="_blank" class="ti-instagram lgi"></a>
-          <a href="https://www.youtube.com/channel/UCQprMsG-raCIMlBudm20iLQ" target="_blank" class="ti-youtube lgi"></a>
-          <a href="https://github.com/fossasia" target="_blank" class="ti-github lgi"></a>
-          <a href="https://flickr.com/photos/fossasia" target="_blank" class="ti-flickr lgi"></a>
-          <a href="https://www.linkedin.com/groups/FOSSASIA-3762811" target="_blank" class="ti-linkedin lgi"></a>
-          <a href="https://plus.google.com/108920596016838318216" target="_blank" class="ti-google lgi"></a>
-          <a href="https://codein.withgoogle.com/organizations/fossasia/" target="_blank" class="ti-settings lgi"></a>
-          <a href="https://fossasia-slack.herokuapp.com/" target="_blank" class="fa fa-slack lgi"></a>
-          <a href="https://groups.google.com/forum/#!forum/fossasia" target="_blank" class="fa fa-google lgi"></a>
-        </p>
-      </div>
-    </div>
-    <div class="container">
-      <div class="row">
-        <div class="col-xs-12 col-sm-6 col-md-4 h-100 social-media-widget">
-
-          <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Ffossasia%2F&tabs=timeline&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false&appId"
-            width="100%" height="100%" style="border:none;overflow:hidden" scrolling="no" frameborder="0"
-            allowTransparency="true" allow="encrypted-media">
-          </iframe>
-        </div>
-        <div class="col-xs-12 col-sm-6 col-md-4 h-100 social-media-widget">
-          <a class="twitter-timeline actual" data-width="100%" data-height="100%" data-theme="dark" data-link-color="#E81C4F"
-            href="https://twitter.com/fossasia?ref_src=twsrc%5Etfw">Tweets by fossasia</a>
-          <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-        </div>
-        <div class="col-xs-12 col-sm-6 col-md-4 h-100 social-media-widget">
-          <iframe id="ytplayer" type="text/html" width="100%" height="100%" src="https://www.youtube.com/embed/videoseries?list=UUQprMsG-raCIMlBudm20iLQ"
-            frameborder="0" allowfullscreen>
-          </iframe>
-        </div>
-        <div class="col-xs-12 col-sm-6 col-md-4 h-100 social-media-widget">
-          <a href="https://www.instagram.com/fossasia/" class="social-media-title">Fossasia on Instagram</a>
-          <iframe src="https://www.powr.io/plugins/instagram-feed/view?unique_label=b6088ce2_1541626926&external_type=iframe"
-            width="100%" height="68%" frameborder="0"></iframe>
-          <a href="https://www.instagram.com/fossasia/" class="view-profile">View Profile</a>
-          <div class="location-link-container">
-            <a href="https://www.instagram.com/explore/locations/108458769184495/ho-chi-minh-city-vietnam/" class="location-link">Ho
-              Chi Minh City, Vietnam</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<section>
-  <div class="container">
-    <div class="row">
-      <div class="col-sm-12 text-center">
-        <h4 class="uppercase mb16">Past Memories</h4>
-        <p class="lead mb64">
-          For more insight on our events and culture visit
-          <a href="https://www.flickr.com/photos/fossasia/">Flicker</a>
-        </p>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-sm-12">
-        <div class="lightbox-grid square-thumbs" data-gallery-title="Gallery">
-          <ul>
-            <li>
-              <a href="img/PastMemories/1.jpg" data-lightbox="Gallery">
-
-                <div class="background-image-holder fadeIn" style="background: url(&quot;img/PastMemories/1.jpg&quot;);">
-                  <img alt="image" class="background-image" src="img/PastMemories/1.jpg" style="display: none;" />
-                </div>
-              </a>
-            </li>
-            <li>
-              <a href="img/PastMemories/2.jpg" data-lightbox="Gallery">
-                <div class="background-image-holder fadeIn" style="background: url(&quot;img/PastMemories/2.jpg&quot;);">
-                  <img alt="image" class="background-image" src="img/PastMemories/2.jpg" style="display: none;" />
-                </div>
-              </a>
-            </li>
-            <li>
-              <a href="img/PastMemories/3.jpg" data-lightbox="Gallery">
-                <div class="background-image-holder fadeIn" style="background: url(&quot;img/PastMemories/3.jpg&quot;);">
-                  <img alt="image" class="background-image" src="img/PastMemories/3.jpg" style="display: none;" />
-                </div>
-              </a>
-            </li>
-            <li>
-              <a href="img/PastMemories/4.jpg" data-lightbox="Gallery">
-                <div class="background-image-holder fadeIn" style="background: url(&quot;img/PastMemories/4.jpg&quot;);">
-                  <img alt="image" class="background-image" src="img/PastMemories/4.jpg" style="display: none;" />
-                </div>
-              </a>
-            </li>
-            <li>
-              <a href="img/PastMemories/5.jpg" data-lightbox="Gallery">
-                <div class="background-image-holder fadeIn" style="background: url(&quot;img/PastMemories/5.jpg&quot;);">
-                  <img alt="image" class="background-image" src="img/PastMemories/5.jpg" style="display: none;" />
-                </div>
-              </a>
-            </li>
-            <li>
-              <a href="img/PastMemories/6.jpg" data-lightbox="Gallery">
-                <div class="background-image-holder fadeIn" style="background: url(&quot;img/PastMemories/6.jpg&quot;);">
-                  <img alt="image" class="background-image" src="img/PastMemories/6.jpg" style="display: none;" />
-                </div>
-              </a>
-            </li>
-            <li>
-              <a href="img/PastMemories/7.jpg" data-lightbox="Gallery">
-
-                <div class="background-image-holder fadeIn" style="background: url(&quot;img/PastMemories/7.jpg&quot;);">
-                  <img alt="image" class="background-image" src="img/PastMemories/7.jpg" style="display: none;" />
-                </div>
-              </a>
-            </li>
-            <li>
-              <a href="img/PastMemories/8.jpg" data-lightbox="Gallery">
-
-                <div class="background-image-holder fadeIn" style="background: url(&quot;img/PastMemories/8.jpg&quot;);">
-                  <img alt="image" class="background-image" src="img/PastMemories/8.jpg" style="display: none;" />
-                </div>
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="bg-secondary">
-  <div class="container" id="videos">
-    <!-- end of row -->
-    <div class="row v-align-children">
-      <div class="col-md-7 col-sm-6 text-center mb-xs-24">
-        <video controls="" preload="metadata">
-          <source src="video/fossasia.mp4" type="video/mp4" />
-        </video>
-      </div>
-      <div class="col-md-4 col-md-offset-1 col-sm-5 col-sm-offset-1">
-        <h3>Fossasia Attracting Students</h3>
-        <p>
-          The video is made is by one of our students during the competition
-          itself!
-        </p>
-
-        <a class="btn btn-lg" href="https://www.youtube.com/channel/UCQprMsG-raCIMlBudm20iLQ" target="_blank">Our
-          Youtube Channel</a>
-      </div>
-    </div>
-    <!-- end of row -->
-  </div>
-  <!-- end of container -->
-</section>
-
-<!-- Project section -->
-<section>
-  <div class="container">
-    <div class="row mb64 mb-xs-24">
-      <div class="col-sm-12 col-md-10 col-md-offset-1 text-center">
-        <h3>FOSSASIA | Projects</h3>
-      </div>
-    </div>
-    <div class="row v-align-children extra_padding_b">
-      <div class="col-md-7 col-sm-6 text-center mb-xs-24">
-        <img class="cast-shadow" alt="Screenshot" src="img/susi.jpg" />
-      </div>
-      <div class="col-md-4 col-md-offset-1 col-sm-5 col-sm-offset-1">
-        <h3>SUSI.AI</h3>
-        <p>
-          Susi is an artificial intelligence system, combining pattern matching,
-          internet data, data flow, and inference engine principles. Through
-          some abilities to reflect, it can remember the user input to produce
-          deductions and personalized feedback. Its purpose is to explore the
-          abilities of an artificial companion and to answer the remaining
-          unanswered questions. The SUSI.AI web chat is a front-end developed
-          for web access of SUSI.
-        </p>
-        <a class="btn-filled btn" href="https://github.com/fossasia/chat.susi.ai">Contribute</a>
-        <a class="btn-filled btn" href="https://chat.susi.ai/">Try</a>
-      </div>
-    </div>
-    <div class="row v-align-children extra_padding_b">
-      <div class="col-md-7 col-sm-6 text-center mb-xs-24">
-        <img class="cast-shadow" alt="logo" src="img/meil_s.png" />
-      </div>
-      <div class="col-md-4 col-md-offset-1 col-sm-5 col-sm-offset-1">
-        <h3>Meilix</h3>
-        <p>
-          Meilix is a beautiful and customizable Linux build for out of the box
-          features for an Internet Kiosk. You can use the Meilix Generator (Web
-          app) to make a Linux for your own brand/event, also add apps and
-          features you need pre-installed, it will create an ISO Image of your
-          Linux, which you can use as a live boot or install on PCs.
-        </p>
-        <a class="btn-filled btn" href="https://github.com/fossasia/meilix">Contribute</a>
-        <a class="btn-filled btn" href="https://meilix.fossasia.org/">Try</a>
-      </div>
-    </div>
-    <div class="row v-align-children extra_padding_b">
-      <div class="col-md-7 col-sm-6 text-center mb-xs-24">
-        <img class="cast-shadow" alt="logo" src="img/lok_s.png" />
-      </div>
-      <div class="col-md-4 col-md-offset-1 col-sm-5 col-sm-offset-1">
-        <h3>Loklak</h3>
-        <p>
-          loklak is a server application which is able to collect messages from
-          various sources, including twitter. The server contains a search index
-          and a peer-to-peer index sharing interface. All messages are stored in
-          an elasticsearch index.
-        </p>
-        <a class="btn-filled btn" href="https://github.com/loklak/loklak_server">Contribute</a>
-        <a class="btn-filled btn" href="https://loklak-server-api.herokuapp.com">Try</a>
-      </div>
-    </div>
-    <br />
-    <div class="row v-align-children extra_padding_b">
-      <div class="col-md-7 col-sm-6 text-center mb-xs-24">
-        <img class="cast-shadow" alt="Screenshot" src="img/susper.png" />
-      </div>
-      <div class="col-md-4 col-md-offset-1 col-sm-5 col-sm-offset-1">
-        <h3>SUSPER</h3>
-        <p>
-          Susper is a decentralized Search Engine that uses the peer to peer
-          system yacy and Apache Solr to crawl and index search results.
-        </p>
-        <a class="btn-filled btn" href="https://github.com/fossasia/susper.com">Contribute</a>
-        <a class="btn-filled btn" href="https://susper.com">Try</a>
-      </div>
-    </div>
-    <br />
-    <!-- end of row -->
-  </div>
-  <!-- end of container -->
-</section>
-
-<!-- Videos Section -->
-<section class="bg-secondary pb0">
-  <div class="container">
-    <div class="row mb64 mb-xs-24">
-      <div class="col-sm-12 col-md-10 col-md-offset-1 text-center">
-        <h2>Videos</h2>
-      </div>
-    </div>
-    <!-- end of row -->
-
-    <div class="row masonry masonryFlyIn">
-      <div class="col-md-12 col-sm-12 masonry-item mb30">
-        <div class="col-sm-12 text-center spread-children-large">
-          <div class="mentor">
-          {% for video in site.data.videos %}
-          <a href="{{ video.link }}">
-            <div class="card single-mentor" id="video">
-              {% if video.image %}
-              <img src="img/videos/{{ video.image }}" style="width:150px; height:150px;" />
-              {% endif %} <br />
-            </div>  
-              <h4 class="person-name">
-                <b>{{ video.name }}</b>
-              </h4>
-              <br />
-              <h5 class="person-name">{{ video.user }}</h5>
-            </div>
-          </a>
-          {% endfor %}
-        </div>
-      </div>
-      <!-- end of row -->
-    </div>
-  </div>
-</section>
-<!-- Videos section -->
-
-<section>
-  <div class="container" id="mentors">
-    <div class="row mb64 mb-xs-24">
-      <div class="col-sm-12 col-md-10 col-md-offset-1 text-center">
-        <h3>Our Mentors</h3>
-      </div>
-    </div>
-    <!-- end of row -->
-    <div class="row">
-      {% for mentor in site.data.mentors limit:30 %}
-
-      <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 text-center">
-        <div class="card single-mentor">
-          <div class="mentor">
-          {% if mentor.image %}
-          <img class="mentor-img" src="img/mentors/{{mentor.image}}" alt="{{ mentor.name }}" />
-          {% else %}
-          <img src="img/mentors/member.png" alt="{{ mentor.name }}" /> {% endif
-          %}
-             <ul class="list-inline social-list social-overlay-list">
-            {% if mentor.github %}
-            <a href="https://github.com/{{mentor.github}}" class="icon-a" target="_blank" rel="noopener">
-              <i class="ti-github"></i>
-            </a>
-            {% endif %} {% if mentor.twitter %}
-
-
-            <a href="https://twitter.com/{{ mentor.twitter }}" class="icon-a" target="_blank">
-              <i class="ti-twitter-alt"></i>
-            </a>
-            {% endif %} {% if mentor.blog %}
-
-            <a href="https://{{ mentor.blog }}" class="icon-a" target="_blank">
-              <i class="ti-rss"></i>
-            </a>
-            {% endif %} {% if mentor.facebook %}
-
-            <a href="https://facebook.com/{{ mentor.facebook }}" class="icon-a" target="_blank">
-              <i class="ti-facebook"></i>
-            </a>
-            {% endif %}
-          </ul>
-          </div>  
-          <p class="person-name">{{ mentor.name }}</p>
-
+        <!-- About Me section end -->
          
+        <!-- My Skills section start -->
+        <div class="section" id="skills">
+            <script type="text/javascript">
+                 $(document).ready(function() {
+      $('.progress .progress-bar').css("width",
+                function() {
+                    return $(this).attr("aria-valuenow") + "%";
+                }
+        )
+    });
+            </script>
+            <h1><span>My Skills</span></h1>
+            <ul>
+            <div class="progress skill-bar ">
+                <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+                    <span class="skill">HTML <i class="val">100%</i></span>
+                </div>
+            </div>
+                
+            <div class="progress skill-bar">
+                <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" >
+                    <span class="skill">CSS<i class="val">90%</i></span>
+                </div>
+            </div>
+            
+            <div class="progress skill-bar">
+                <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+                    <span class="skill">JavaScript<i class="val">75%</i></span>
+                </div>
+            </div>  
+            <div class="progress skill-bar">
+               <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
+                   <span class="skill">Python<i class="val">80%</i></span>
+               </div>
+            </div>  
+            <div class="progress skill-bar">
+               <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
+                   <span class="skill">Java<i class="val">90%</i></span>
+               </div>
+            </div>  
+            </ul>
         </div>
-      </div>
-      {% endfor %}
-    </div>
-    <!-- end of row -->
-  </div>
-  <!-- end of container -->
-</section>
-
-<section>
-  <div class="container" id="students">
-    <div class="row mb64 mb-xs-24">
-      <div class="col-sm-12 col-md-10 col-md-offset-1 text-center">
-        <h1>Students</h1>
-      </div>
-    </div>
-    <!-- end of row -->
-    <div class="row">
-      {% for student in site.data.students limit:30 %}
-
-      <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 text-center">
-        <div class="card single-mentor">
-          <div class="mentor">
-          {% if student.image %}
-          <img class="mentor-img" src="img/students/{{student.image}}" alt="{{ student.name }}" />
-          {% else %}
-          <img src="img/mentors/member.png" alt="{{ student.name }}" /> {% endif
-          %}
-          
-          <ul class="list-inline social-list social-overlay-list">
-            {% if student.github %}
-            <a href="https://github.com/{{student.github}}" class="icon-a" target="_blank" rel="noopener">
-              <i class="ti-github"></i>
-            </a>
-            {% endif %} {% if student.twitter %}
-
-            <a href="https://twitter.com/{{ student.twitter }}" class="icon-a" target="_blank">
-              <i class="ti-twitter-alt"></i>
-            </a>
-            {% endif %} {% if student.blog %}
-
-            <a href="https://{{ student.blog }}" class="icon-a" target="_blank">
-              <i class="ti-rss"></i>
-            </a>
-            {% endif %} {% if student.facebook %}
-
-
-            <a href="https://facebook.com/{{ student.facebook }}" class="icon-a" target="_blank">
-              <i class="ti-facebook"></i>
-            </a>
-            {% endif %}
-          </ul>
-          </div>  
-          <p class="student_name">{{ student.name }}</p>
-
+        <!-- My Skills section end -->
+        
+        
+        
+        <!-- My Schedule section start -->
+        <div class="section">
+            <h1><span>My Coding Schedule</span></h1>
+            <table>
+                <tr>
+                    <th>Day</th>
+                    <th>Mon</th>
+                    <th>Tue</th>
+                    <th>Wed</th>
+                    <th>Thu</th>
+                    <th>Fri</th>
+                </tr>
+                <tr>
+                    <td>8-8:30</td>
+                    <td class="selected">Learn</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>9-10</td>
+                    <td></td>
+                    <td class="selected">Practice</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>1-1:30</td>
+                    <td></td>
+                    <td></td>
+                    <td class="selected">Play</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>3:45-5</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td class="selected">Code</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>6-6:15</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td class="selected">Discuss</td>
+                </tr>
+            </table>
         </div>
-      </div>
-      {% endfor %}
-    </div>
-    <!-- end of row -->
-  </div>
-  <!-- end of container -->
-</section>
-<!-- Map -->
-<section>
-  <div class="container">
-    <div class="row mb64 mb-xs-24">
-      <div class="col-sm-12 col-md-10 col-md-offset-1 text-center">
-        <h3>Map of our students and mentors</h3>
-      </div>
-    </div>
-    <div id="map-overlay">
-      <div id="map" align="center"></div>
-    </div>
-  </div>
-</section>
-<script src="js/geolocation.js"></script>
-<script type='text/javascript' id='susi-bot-script' data-userid='47e4e974e18466f55525f5293c5017be' data-group='Knowledge' data-language='en' data-skill='Androxia' src='https://skills.susi.ai/susi-chatbot.js'></script>
-<!-- Contributors -->
-<section class="bg-secondary">
-  <div class="container">
-    <div class="row mb-xs-24 mb16">
-      <div class="col-sm-12 col-md-10 col-md-offset-1 text-center">
-        <h3>Contributors</h3>
-        <a class="btn btn-lg" href="https://github.com/fossasia/gci18.fossasia.org" target="_blank">Repository</a>
-        <a class="btn btn-lg" href="https://github.com/fossasia/gci18.fossasia.org/pulse" target="_blank">View Activity</a>
-        <a class="btn btn-lg" href="https://github.com/fossasia/gci18.fossasia.org/graphs/contributors" target="_blank">Details
-          of Our Contributors</a>
-        <a class="btn btn-lg" href="https://blog.fossasia.org/open-source-developer-guide-and-best-practices-at-fossasia/"
-          target="_blank">How to contribute?</a>
-      </div>
-    </div>
-    <!-- end of row -->
-    <div class="row equal-row" id="contributors"></div>
-    <!-- end of row -->
-  </div>
-  <!-- end of container -->
-</section>
-<section>
-  <div id="app" class="thank_you"></div>
-</section>
+        <!-- My Schedule section end -->
+        
+       
+         
+        <div class="section">
+            <h1><span>My Favourite opensource Projects</span></h1>
+            <div style="margin-bottom=20px;">
+                 <img style="margin-bottom=20px;" src="FOSSASIA.jpg" alt="FOSSASIA" style="width:100%">
+                    <p><a href="https://fossasia.org/" target="_blank">FOSSASIA</a> develops Open Source software and hardware for conversational AIs, science and event management with a global developer community from its base in Asia.</p>
+            </div>
+            <div>       </div>
+             <div>
+                 <img style="margin-bottom=20px;" src="GCI.jpg" alt="GCI" style="width:100%">
+                    <p><a href="https://codein.withgoogle.com/" target="_blank">Google Code-In</a>  is a contest to introduce pre-university students (ages 13-17) to open source software development. Since 2010, over 8100 students from 107 countries have completed work in the contest.</p>
+            </div> 
+        </div>
+        <div class="section" id="projects">
+            <h1><span>My Projects</span></h1>
+            <div>
+                 <img style="margin-bottom=20px;" src="hpm.jpg" alt="Help Our Mother" style="width:100%">
+                    <p><a href="https://helpourmother.dx.am/" target="_blank">Help Our Mother</a> is an web based organization to stop pollution in India.</p>
+            </div>
+        </div>
+       
+        
+        
+        <!-- Contacts section start -->
+        <div class="section" id="contact">
+            <h1><span>Follow Me</span></h1>
+            <div>
+                <a href="https://twitter.com/SahilSaha35194">
+                    <img alt="Twitter" src="twitter.png">
+                </a>
+            </div>
+        </div>
+        <!-- Contacts section end -->
+        
+        <div class="copyright">
+            &copy; 2018 My Portfolio. All rights reserved.
+        </div>
+        
+    </body>
+</html>
