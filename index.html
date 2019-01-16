@@ -1,432 +1,931 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-        <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-        <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-        <title>Sahil Saha's Portfolio</title>
-        <link href="https://fonts.googleapis.com/css?family=Handlee" rel="stylesheet">
-        <link rel="stylesheet" type="text/css" href="style.css">
-        <style>
-            html {
-                margin: 0;
-                 padding: 0;
-                scroll-behavior: smooth;
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+            <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+            <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+            <title>Sahil Saha's Portfolio</title>
+            <link href="https://fonts.googleapis.com/css?family=Handlee" rel="stylesheet">
+            <link rel="stylesheet" type="text/css" href="style.css">
+            <style>
+            /*
+    * ROADMAP CSS
+    */
+
+    #roadmap__container {
+      position: relative;
+    }
+
+    #roadmap {
+      padding: 0;
+      position: relative;
+      margin: 20px auto 0 auto;
+      list-style: none;
+    }
+
+    #roadmap #endpoint {
+      width: 15px;
+      height: 15px;
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      border-radius: 50%;
+      background: #ffd602;
+    }
+
+    #roadmap::before {
+      content: "";
+      background-color: #252525;
+      height: calc(100% - 20px);
+      position: absolute;
+      left: 50%;
+      top: 20px;
+      transform: translate3D(-50%, 0, 0);
+      z-index: 0;
+      width: 2px;
+    }
+
+    #roadmap .__year {
+      display: table;
+      text-align: center;
+      margin: 0 auto;
+      padding: 10px 25px;
+      border-radius: 50px;
+      width: 50px;
+      position: relative;
+      z-index: 3;
+      background: #fff;
+      border: 1px solid #ffd600;
+      font-size: 1.5em;
+      font-weight: 600;
+    }
+
+    #roadmap .__item {
+      width: 100%;
+      position: relative;
+    }
+
+    #roadmap .__item .text {
+      width: 300px;
+      padding: 20px;
+      text-align: left;
+      background: #fff;
+      border-radius: 5px;
+      display: inline-block;
+      box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.4),
+        2px 4px 9px 5px rgba(0, 0, 0, 0.09);
+    }
+
+    #roadmap .__item .text b {
+      display: inline-block;
+      margin-bottom: 10px;
+      font-size: 1.3em;
+      color: #252525;
+    }
+
+    #roadmap .__item .text span {
+      color: #a7a7a7;
+      font-size: 1.13em;
+    }
+
+    #roadmap .__item .text hr {
+      margin: 20px 0;
+    }
+
+    #roadmap .__item .text .__ongoing {
+      display: table;
+      margin-top: 10px;
+      background: rgb(134, 232, 254);
+      clear: both;
+      padding: 8px;
+      color: #252525;
+    }
+
+    #roadmap .__item.__left {
+      text-align: left;
+      transform: translateZ(0) translateX(-200%);
+      transition: transform 0.6s ease;
+    }
+
+    #roadmap .__item.__right {
+      text-align: right;
+      transform: translateZ(0) translateX(200%);
+      transition: transform 0.6s ease;
+    }
+
+    #roadmap .__item.__left .text {
+      border-right: 4px solid #ffd600;
+    }
+
+    #roadmap .__item.__right .text {
+      border-left: 4px solid #ffd600;
+    }
+
+    #roadmap .__item.__left .connector,
+    #roadmap .__item.__right .connector {
+      width: 0;
+      transition: width 0.4s ease;
+      will-change: width;
+    }
+
+    #roadmap .__item.__left .connector {
+      position: absolute;
+      background-color: #252525;
+      height: 2px;
+      bottom: 50%;
+    }
+
+    #roadmap .__item.__right .connector {
+      position: absolute;
+      background-color: #252525;
+      height: 2px;
+      bottom: 50%;
+    }
+
+    #roadmap .__item.__left .connector::before {
+      content: "";
+      position: absolute;
+      height: 20px;
+      width: 20px;
+      border: 4px solid #ffd600;
+      background-color: #fff;
+      border-radius: 50%;
+      left: -12px;
+      transform: translate3d(0, -50%, 0);
+    }
+
+    #roadmap .__item.__left .connector::after {
+      content: "";
+      position: absolute;
+      height: 12px;
+      width: 12px;
+      border: 2px solid #ffd600;
+      background-color: #fff;
+      border-radius: 50%;
+      right: -6px;
+      z-index: 3;
+      transform: translate3d(0, -50%, 0);
+    }
+
+    #roadmap .__item.__right .connector::before {
+      content: "";
+      position: absolute;
+      height: 20px;
+      width: 20px;
+      border: 4px solid #ffd600;
+      background-color: #fff;
+      border-radius: 50%;
+      right: -12px;
+      transform: translate3d(0, -50%, 0);
+    }
+
+    #roadmap .__item.__right .connector::after {
+      content: "";
+      position: absolute;
+      height: 12px;
+      width: 12px;
+      border: 2px solid #ffd600;
+      background-color: #fff;
+      border-radius: 50%;
+      left: -6px;
+      z-index: 3;
+      transform: translate3d(0, -50%, 0);
+    }
+
+    #roadmap .__goals .__the_goals {
+      display: block;
+      width: 300px;
+      margin: 100px auto 50px auto;
+      padding: 20px 0;
+      background: #ffda33;
+      text-align: center;
+      position: relative;
+      z-index: 3;
+
+      opacity: 0;
+      transition: opacity 0.6s ease;
+    }
+    #roadmap .__goals .__the_goals:before {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 100%;
+      border-bottom: 25px solid #ffda33;
+      border-left: 150px solid transparent;
+      border-right: 150px solid transparent;
+    }
+    #roadmap .__goals .__the_goals:after {
+      content: "";
+      position: absolute;
+      z-index: 2;
+      left: 0;
+      top: 100%;
+      border-top: 25px solid #ffda33;
+      border-left: 150px solid transparent;
+      border-right: 150px solid transparent;
+      filter: drop-shadow(0px 14px 3px rgba(0, 0, 0, 0.5));
+    }
+    #roadmap .__goals .__the_goals b {
+      display: block;
+      margin-top: 65px;
+      font-size: 1.4em;
+    }
+    #roadmap .__goals .__the_goals ul {
+      padding: 0 50px;
+      text-align: left;
+      font-size: 1.2em;
+    }
+    #roadmap .__goals .__the_goals ul li {
+      padding: 0;
+      margin: 5px 0;
+      list-style-type: disc;
+    }
+    #roadmap .__goals .__coin {
+      position: absolute;
+      width: 150px;
+      left: 50%;
+      top: -75px;
+      transform: translateX(-50%);
+      filter: drop-shadow(0px 0px 10px rgba(247, 255, 255, 0.3));
+
+      z-index: 4;
+
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+
+    @media (max-width: 850px) {
+      #roadmap::before {
+        left: 0;
+        top: 50px;
+        height: calc(100% - 50px);
+      }
+
+      #roadmap #endpoint {
+        left: 0;
+      }
+
+      #roadmap .__year {
+        display: table;
+        margin: 0;
+        z-index: 0;
+      }
+
+      #roadmap .__item {
+        display: inline-block;
+      }
+
+      #roadmap .__item .connector {
+        width: 23px;
+        left: 3px;
+        z-index: 0;
+      }
+
+      #roadmap .__item .text {
+        width: 75%;
+        float: right;
+        margin: 30px 0;
+      }
+
+      #roadmap .__item.__left .text {
+        border-right: none;
+        border-left: 4px solid #ffd600;
+      }
+
+      #roadmap .__item.__right {
+        text-align: left;
+        transform: translateX(0);
+      }
+
+      #roadmap .__item.__left {
+        transform: translateX(0);
+      }
+
+      #roadmap .__item.__left .connector {
+        transform: rotateY(180deg);
+      }
+
+      #roadmap .__item.__right .connector::after {
+        left: -9px;
+      }
+
+      #roadmap .__item.__right .connector::before {
+        right: -8px;
+      }
+
+      #roadmap .__item.__left .connector::before {
+        left: -8px;
+      }
+
+      #roadmap .__item.__left .connector::after {
+        right: -9px;
+      }
+      #roadmap .__goals > .__the_goals,
+      #roadmap .__goals .__coin {
+        opacity: 1;
+      }
+      #roadmap .__goals .__coin {
+        top: 20px;
+      }
+      #roadmap .__goals .__prettify {
+        position: absolute;
+        width: 100%;
+        background: #252525;
+        height: 100px;
+        top: 50%;
+      }
+    }
+
+                html {
+                    margin: 0;
+                     padding: 0;
+                    scroll-behavior: smooth;
+                    }
+    body {
+        font-family: 'Handlee', cursive;
+        font-size: 13pt;
+        background-color: #efefef;
+        padding: 10px;
+        margin: 0;
+    }
+                .column2 {
+        float: left;
+        width: 25%;
+    }
+    /* Clear floats after rows */ 
+    .row2:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+    /* Content */
+    .content2 {
+        background-color: white;
+        padding: 10px;
+    }
+    h1 {
+        font-size: 15pt;
+        color: #20bcd5;
+        text-align: center;
+        padding: 18px 0 18px 0;
+        margin: 30px 0 10px 0;
+    }
+    h1 span {
+        border: 4px dashed #20bcd5;
+        padding: 10px;
+    }
+    p {
+        padding: 0;
+        margin: 0;
+    }
+    .img-circle {
+        border: 3px solid white;
+        border-radius: 50%;
+    }
+    .section {
+        background-color: #fff;
+        padding: 15px;
+        margin-bottom: 10px;
+        margin-top: 60px;
+        border-radius: 10px;
+     }
+    #header {
+        background-image: url("https://www.sololearn.com/Uploads/header.jpg");
+        background-size: cover;
+    }
+    #header img {
+        display: block;
+        width: 80px;
+        height: 80px;
+        margin: auto;
+    }
+    #header p {
+        font-size: 25pt;
+        color: #3b464c;
+        padding-top: 5px;
+        margin: 0;
+        font-weight: bold;
+        text-align: center;
+    }
+    .quote {
+        font-size: 12pt;
+        text-align: right;
+        margin-top: 10px;
+    }
+    table {
+        width: 100%;
+    }
+    table, th, td {
+        border: 2px solid #cecece;
+        border-collapse: collapse;
+        text-align: center;
+        table-layout: fixed;
+    }
+    .selected {
+        background-color: #f36f48;
+        font-weight: bold;
+        color: white;
+    }
+    li {
+        margin-bottom: 15px;
+        font-weight: bold;
+    }
+    progress {
+        width: 70%;
+        height: 20px;
+        color: #3fb6b2;
+        background: #efefef;
+    }
+    progress::-webkit-progress-bar {
+        background: #efefef;
+    }
+    progress::-webkit-progress-value {
+        background: #3fb6b2;
+    } 
+    progress::-moz-progress-bar {
+        color: #3fb6b2;
+        background: #efefef;
+    }
+    iframe, audio {
+        display: block;
+        margin: 0 auto;
+        border: 3px solid #3fb6b2;
+    }
+    hr {
+        border: 0;
+        height: 1px;
+        background: #f36f48;
+    }
+    form {
+        text-align: center;
+        margin-top: 0;
+    }
+    .submit {
+        background-color: #3fb6b2;
+        padding: 12px 45px;
+        border-radius: 5px;
+        cursor: pointer;
+        color: #ffffff;
+        border: none;
+        outline: none;
+        margin: 0;
+        font-weight: bold;
+    }
+    .submit:hover {
+        background-color: #43a09d;
+    }
+    textarea {
+        height: 100px;
+    }
+    input, textarea {
+        margin-bottom: 10px;
+        font-size: 11pt;
+        padding: 15px 10px 10px;
+        border: 1px solid #cecece;
+        background-color: #efefef;
+        color: #787575;
+        border-radius: 5px;
+        width: 70%;
+        outline: none;
+    }
+    .face {
+        transform: scale(0.4);
+        margin: 0 auto;
+        display: block;
+        margin-top: -35px;
+        margin-bottom: -25px;
+    }
+     #app {
+        text-align: center;
+        font-size: 25pt;
                 }
-body {
-    font-family: 'Handlee', cursive;
-    font-size: 13pt;
-    background-color: #efefef;
-    padding: 10px;
-    margin: 0;
-}
-            .column2 {
-    float: left;
-    width: 25%;
-}
-/* Clear floats after rows */ 
-.row2:after {
-    content: "";
-    display: table;
-    clear: both;
-}
-/* Content */
-.content2 {
-    background-color: white;
-    padding: 10px;
-}
-h1 {
-    font-size: 15pt;
-    color: #20bcd5;
-    text-align: center;
-    padding: 18px 0 18px 0;
-    margin: 30px 0 10px 0;
-}
-h1 span {
-    border: 4px dashed #20bcd5;
-    padding: 10px;
-}
-p {
-    padding: 0;
-    margin: 0;
-}
-.img-circle {
-    border: 3px solid white;
-    border-radius: 50%;
-}
-.section {
-    background-color: #fff;
-    padding: 15px;
-    margin-bottom: 10px;
-    margin-top: 60px;
-    border-radius: 10px;
- }
-#header {
-    background-image: url("https://www.sololearn.com/Uploads/header.jpg");
-    background-size: cover;
-}
-#header img {
-    display: block;
-    width: 80px;
-    height: 80px;
-    margin: auto;
-}
-#header p {
-    font-size: 25pt;
-    color: #3b464c;
-    padding-top: 5px;
-    margin: 0;
-    font-weight: bold;
-    text-align: center;
-}
-.quote {
-    font-size: 12pt;
-    text-align: right;
-    margin-top: 10px;
-}
-table {
-    width: 100%;
-}
-table, th, td {
-    border: 2px solid #cecece;
-    border-collapse: collapse;
-    text-align: center;
-    table-layout: fixed;
-}
-.selected {
-    background-color: #f36f48;
-    font-weight: bold;
-    color: white;
-}
-li {
-    margin-bottom: 15px;
-    font-weight: bold;
-}
-progress {
-    width: 70%;
-    height: 20px;
-    color: #3fb6b2;
-    background: #efefef;
-}
-progress::-webkit-progress-bar {
-    background: #efefef;
-}
-progress::-webkit-progress-value {
-    background: #3fb6b2;
-} 
-progress::-moz-progress-bar {
-    color: #3fb6b2;
-    background: #efefef;
-}
-iframe, audio {
-    display: block;
-    margin: 0 auto;
-    border: 3px solid #3fb6b2;
-}
-hr {
-    border: 0;
-    height: 1px;
-    background: #f36f48;
-}
-form {
-    text-align: center;
-    margin-top: 0;
-}
-.submit {
-    background-color: #3fb6b2;
-    padding: 12px 45px;
-    border-radius: 5px;
-    cursor: pointer;
-    color: #ffffff;
-    border: none;
-    outline: none;
-    margin: 0;
-    font-weight: bold;
-}
-.submit:hover {
-    background-color: #43a09d;
-}
-textarea {
-    height: 100px;
-}
-input, textarea {
-    margin-bottom: 10px;
-    font-size: 11pt;
-    padding: 15px 10px 10px;
-    border: 1px solid #cecece;
-    background-color: #efefef;
-    color: #787575;
-    border-radius: 5px;
-    width: 70%;
-    outline: none;
-}
-.face {
-    transform: scale(0.4);
-    margin: 0 auto;
-    display: block;
-    margin-top: -35px;
-    margin-bottom: -25px;
-}
- #app {
-    text-align: center;
-    font-size: 25pt;
-            }
-#contacts img {
-    height: 50px;
-    width: 50px;
-    margin-left: 7px;
-    margin-right: 7px;
-}
-#contacts a {
-    text-decoration: none;
-}
-#contacts img:hover {
-    opacity: 0.8;
-}
-#contacts {
-    text-align: center;
-}
-.copyright {
-    font-size: 8pt;
-    text-align: right;
-    padding-bottom: 10px;
-    color: grey;
-}
-            .nav {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #333;
-    position: fixed; /* Set the navbar to fixed position */
-    top: 0; /* Position the navbar at the top of the page */
-    width: 100%; /* Full width */            
-}
-.opt {
-    float: left;
-    margin-left:5px;
-}
-.opt .bu {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-}
-.opt .bu:hover:not(.active) {
-    background-color: #111;
-}
-.active {
-    background-color: #4CAF50;
-}
-            .progress {
-  height: 35px;
-}
-.progress .skill {
-  font: normal 12px "Open Sans Web";
-  line-height: 35px;
-  padding: 0;
-  margin: 0 0 0 20px;
-  text-transform: uppercase;
-}
-.progress .skill .val {
-  float: right;
-  font-style: normal;
-  margin: 0 20px 0 0;
-}
-.progress-bar {
-  text-align: left;
-  transition-duration: 3s;
-}
-        </style>    
-    </head>    
-    <body>
-        <ul class="nav">
-        <li class="opt"><a class="bu" href="#about">About</a></li>
-        <li class="opt"><a class="bu" href="#projects">Projects</a></li>
-        <li class="opt"><a class="bu" href="#skills">Skills</a></li>
-        </ul>
-        <!-- header start -->
-        <div id="header" class="section">
-            <img alt="" class="img-circle" src="Sahil.jpg">
-            <p>Sahil Saha</p>
-        </div>
-        <div id="app"></div>
-        <script src='core.js'></script>
-        <script type="text/javascript">
-            var app = document.getElementById('app');
-            var typewriter = new Typewriter(app, {
-            loop: true
-            });
-             typewriter.typeString('Google Code-in 2018 Grand Prize winner')
-            .pauseFor(2500)
-            .deleteAll()
-            typewriter.typeString('web developer')
-            .pauseFor(2500)
-            .deleteAll()
-             typewriter.typeString('open source contributor')
-            .pauseFor(2500)
-            .deleteAll()
-            .typeString('android developer')
-            .pauseFor(2500)
-            .deleteAll()
-            .typeString('<strong>a 16 year old</strong>')
-            .pauseFor(2500)
-            .start();
-        </script>
-        <!-- header end -->
-        
-        <!-- About Me 
- start -->
-        <div class="section" id="about">
-            <h1><span>About Me</span></h1>
-            <p>
-                Hey! I'm <strong>Sahil</strong>. Coding has changed my world. It's not just about developing. Learning to code gave me <i>problem-solving skills</i> and a way to communicate with others on a technical level. I enjoy programming the most. It does not seem to be a task I just do it as I love it. I can develop websites and make usseful android apps. And I learned it all at <strong>Online</strong>.
-            </p>
-            <p class="quote">“The most disastrous thing that you can ever learn is your first programming language.” ― Alan Kay</p>
-        </div>
-        <!-- About Me section end -->
-         
-        <!-- My Skills section start -->
-        <div class="section" id="skills">
+    #contacts img {
+        height: 50px;
+        width: 50px;
+        margin-left: 7px;
+        margin-right: 7px;
+    }
+    #contacts a {
+        text-decoration: none;
+    }
+    #contacts img:hover {
+        opacity: 0.8;
+    }
+    #contacts {
+        text-align: center;
+    }
+    .copyright {
+        font-size: 8pt;
+        text-align: right;
+        padding-bottom: 10px;
+        color: grey;
+    }
+                .nav {
+                    z-index: +2;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: #333;
+        position: fixed; /* Set the navbar to fixed position */
+        top: 0; /* Position the navbar at the top of the page */
+        width: 100%; /* Full width */            
+    }
+    .opt {
+        float: left;
+        margin-left:5px;
+    }
+    .opt .bu {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+    }
+    .opt .bu:hover:not(.active) {
+        background-color: #111;
+    }
+    .active {
+        background-color: #4CAF50;
+    }
+                .progress {
+      height: 35px;
+    }
+    .progress .skill {
+      font: normal 12px "Open Sans Web";
+      line-height: 35px;
+      padding: 0;
+      margin: 0 0 0 20px;
+      text-transform: uppercase;
+    }
+    .progress .skill .val {
+      float: right;
+      font-style: normal;
+      margin: 0 20px 0 0;
+    }
+    .progress-bar {
+      text-align: left;
+      transition-duration: 3s;
+    }
+            </style>    
+        </head>    
+        <body>
+            <ul class="nav">
+            <li class="opt"><a class="bu" href="#about">About</a></li>
+            <li class="opt"><a class="bu" href="#projects">Projects</a></li>
+            <li class="opt"><a class="bu" href="#skills">Skills</a></li>
+            </ul>
+            <!-- header start -->
+            <div id="header" class="section">
+                <img alt="" class="img-circle" src="Sahil.jpg">
+                <p>Sahil Saha</p>
+            </div>
+            <div id="app"></div>
+            <script src='core.js'></script>
             <script type="text/javascript">
-                 $(document).ready(function() {
-      $('.progress .progress-bar').css("width",
-                function() {
-                    return $(this).attr("aria-valuenow") + "%";
-                }
-        )
-    });
+                var app = document.getElementById('app');
+                var typewriter = new Typewriter(app, {
+                loop: true
+                });
+                typewriter.typeString('web developer')
+                .pauseFor(2500)
+                .deleteAll()
+                 typewriter.typeString('open source contributor')
+                .pauseFor(2500)
+                .deleteAll()
+                .typeString('android developer')
+                .pauseFor(2500)
+                .deleteAll()
+                .typeString('<strong>a 16 year old</strong>')
+                .pauseFor(2500)
+                .start();
             </script>
-            <h1><span>My Skills</span></h1>
-            <ul>
-            <div class="progress skill-bar ">
-                <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
-                    <span class="skill">HTML <i class="val">100%</i></span>
+            <!-- header end -->
+            
+            <!-- About Me 
+     start -->
+            <div class="section" id="about">
+                <h1><span>About Me</span></h1>
+                <p>
+                    Hey! I'm <strong>Sahil</strong>. Coding has changed my world. It's not just about developing. Learning to code gave me <i>problem-solving skills</i> and a way to communicate with others on a technical level. I enjoy programming the most. It does not seem to be a task I just do it as I love it. I can develop websites and make usseful android apps. And I learned it all at <strong>Online</strong>.
+                </p>
+                <p class="quote">“The most disastrous thing that you can ever learn is your first programming language.” ― Alan Kay</p>
+            </div>
+            <!-- About Me section end -->
+             
+            <!-- My Skills section start -->
+            <div class="section" id="skills">
+                <script type="text/javascript">
+                     $(document).ready(function() {
+          $('.progress .progress-bar').css("width",
+                    function() {
+                        return $(this).attr("aria-valuenow") + "%";
+                    }
+            )
+        });
+                </script>
+                <h1><span>My Skills</span></h1>
+                <ul>
+                <div class="progress skill-bar ">
+                    <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+                        <span class="skill">HTML <i class="val">100%</i></span>
+                    </div>
+                </div>
+                    
+                <div class="progress skill-bar">
+                    <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" >
+                        <span class="skill">CSS<i class="val">90%</i></span>
+                    </div>
+                </div>
+                
+                <div class="progress skill-bar">
+                    <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+                        <span class="skill">JavaScript<i class="val">75%</i></span>
+                    </div>
+                </div>  
+                <div class="progress skill-bar">
+                   <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
+                       <span class="skill">Python<i class="val">80%</i></span>
+                   </div>
+                </div>  
+                <div class="progress skill-bar">
+                   <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
+                       <span class="skill">Java<i class="val">90%</i></span>
+                   </div>
+                </div>  
+                </ul>
+            </div>
+            <!-- My Skills section end -->
+            <div class="section">
+            <h1><span>My Roadmap</span></h1>
+
+       <div id="roadmap__container">
+        <script type="text/javascript">
+            /*
+        * Application state
+        */
+        const state = {
+          items: [],
+          count: 0,
+          isDone: false
+        }
+
+        function drawLine(theBox) {
+          var connector = theBox.children[0];
+          var item = document.querySelector('.__item');
+          var text = document.querySelector('.__item .text');
+
+          var distanceBetweenItemAndLine = (item.offsetWidth / 2) - text.offsetWidth;
+
+          if (theBox.classList.contains('__left')) {
+            connector.style.left = text.offsetWidth + 'px';
+          } else {
+            connector.style.right = text.offsetWidth + 'px';
+          }
+
+          // Adds line after transition time specified in CSS is done
+          setTimeout(function () { connector.style.width = distanceBetweenItemAndLine + 'px'; }, 600);
+        }
+
+        function shouldItemAppear(item) {
+          let x = item.getBoundingClientRect().top;
+          if (x <= (window.innerHeight - item.offsetHeight)) {
+
+            //Is the item a goal?
+            //If so apply a different transformation
+            if (item.classList.contains('__goals')) {
+
+              //Bring in the coin first
+              item.children[1].style.opacity = '1'
+              //Then the rest
+              setTimeout(() => { item.children[2].style.opacity = '1'; }, 500);
+
+            } else {
+
+              item.style.transform = 'translateX(0)'
+              drawLine(item)
+
+            }
+
+            //Count items then call isDone
+            state.count++;
+            state.count == state.items.length ? state.isDone = true : null;
+          }
+        }
+
+        function isScrolling() {
+          //Stop firing
+          if (state.isDone == true) {
+            window.removeEventListener('scroll', isScrolling);
+            window.cancelAnimationFrame(isScrolling);
+            return;
+          }
+
+          shouldItemAppear(state.items[state.count]);
+          window.requestAnimationFrame(isScrolling);
+        }
+
+        function getAllItems() {
+          var scrollY = window.scrollY + window.innerHeight;
+          var items = document.querySelectorAll('#roadmap .__item');
+
+          for (var x = 0; x < items.length; x++) {
+            state.items.push(items[x])
+          }
+
+        }
+
+        function drawLinesMobile() {
+          var connectors = document.querySelectorAll('.__item .connector');
+          var item = document.querySelector('.__item');
+          var text = document.querySelector('.__item .text');
+
+          var distanceBetweenItemAndLine = (item.offsetWidth / 2) - text.offsetWidth;
+
+          for (var x = 0; x < connectors.length; x++) {
+            connectors[x].style.width = item.offsetWidth - text.offsetWidth + 'px';
+          }
+        }
+
+
+        function checkResolution() {
+          if (window.innerWidth > 850) {
+            getAllItems();
+            window.addEventListener('scroll', isScrolling);
+          } else {
+            drawLinesMobile();
+          }
+        }
+
+        window.addEventListener('load', checkResolution);
+        window.requestAnimationFrame(isScrolling);
+        </script>
+        <ul id="roadmap">
+          <div id="endpoint"></div>
+          <li class="__year">2016</li>
+          <li class="__item __left">
+            <span class="connector"></span>
+            <div class="text">
+              <b>2016</b>
+              <br/>
+              <span>Started learning java seriously</span>
+              <hr />
+              <span>I was just exploring the world of cs and failed to find it's limits</span>
+            </div>
+          </li>
+          <li class="__year">2017</li>
+          <li class="__item __right">
+            <span class="connector"></span>
+            <div class="text">
+              <b>2017</b>
+              <br/>
+              <span>Found Google Code-in</span>
+              <hr />
+              <span>Randomly found gci in the internet and registered for it</span>
+            </div>
+          </li>
+          <li class="__item __left">
+            <span class="connector"></span>
+            <div class="text">
+              <b>2017</b>
+              <br/>
+              <span>Just completed 3 tasks</span>
+              <hr />
+              <span>Completed only 3 tasks due to school exams and won a gci-17 t-shirt</span>
+            </div>
+          </li>
+              <li class="__year">2018</li>
+              <li class="__item __goals">
+                <div class="__prettify"></div>
+                <img class="__coin" src="https://www.yoloworld.io/wp-content/uploads/2018/02/coin.png" alt="">
+                <div class="__the_goals">
+                  <b>GOALS 2018</b>
+                  <br/>
+                  <ul>
+                    <li>Win Google Code-in 2018</li>
+                  </ul>
+                </div>
+              </li>
+               <li class="__item __right">
+                <span class="connector"></span>
+                <div class="text">
+                   <b>2018</b>
+                   <br/>
+                   <span>Won Google Code-in 2018</span>
+                   <hr />
+                <span>Was selected as a gci-18 grand prize winner by FOSSASIA</span>
+                </div>
+               </li>
+          
+               <li class="__year">2019</li>
+               <li class="__item __left">
+                   <span class="connector"></span>
+                   <div class="text">
+                    <b>2019</b>
+                   <br/>
+                   <span>WILL BE UPDATED</span>
+                   <hr />
+                   </div>
+               </li>
+               </ul>
+            </div>
+          
+            </div>
+            <!-- My Schedule section start -->
+            <div class="section">
+                <h1><span>My Coding Schedule</span></h1>
+                <table>
+                    <tr>
+                        <th>Day</th>
+                        <th>Mon</th>
+                        <th>Tue</th>
+                        <th>Wed</th>
+                        <th>Thu</th>
+                        <th>Fri</th>
+                    </tr>
+                    <tr>
+                        <td>8-8:30</td>
+                        <td class="selected">Learn</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>9-10</td>
+                        <td></td>
+                        <td class="selected">Practice</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>1-1:30</td>
+                        <td></td>
+                        <td></td>
+                        <td class="selected">Play</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>3:45-5</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="selected">Code</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>6-6:15</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="selected">Discuss</td>
+                    </tr>
+                </table>
+            </div>
+            <!-- My Schedule section end -->
+            
+           
+             
+            <div class="section">
+                <h1><span>My Favourite opensource Projects</span></h1>
+                <div style="padding-bottom=20px;">
+                     <img style="margin-bottom=20px;" src="FOSSASIA.jpg" alt="FOSSASIA" style="width:100%">
+                        <p><a href="https://fossasia.org/" target="_blank">FOSSASIA</a> develops Open Source software and hardware for conversational AIs, science and event management with a global developer community from its base in Asia.</p>
+                </div>
+                <div>       </div>
+                 <div>
+                     <img style="margin-bottom=20px;" src="GCI.jpg" alt="GCI" style="width:100%">
+                        <p><a href="https://codein.withgoogle.com/" target="_blank">Google Code-In</a>  is a contest to introduce pre-university students (ages 13-17) to open source software development. Since 2010, over 8100 students from 107 countries have completed work in the contest.</p>
+                </div> 
+            </div>
+            <div class="section" id="projects">
+                <h1><span>My Projects</span></h1>
+                <div>
+                     <img style="margin-bottom=20px;" src="hpm.jpg" alt="Help Our Mother" style="width:100%">
+                        <p><a href="https://helpourmother.dx.am/" target="_blank">Help Our Mother</a> is an web based organization to stop pollution in India.</p>
                 </div>
             </div>
-                
-            <div class="progress skill-bar">
-                <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" >
-                    <span class="skill">CSS<i class="val">90%</i></span>
+           
+            
+            
+            <!-- Contacts section start -->
+            <div class="section" id="contact">
+                <h1><span>Follow Me</span></h1>
+                <div>
+                    <a href="https://twitter.com/SahilSaha35194">
+                        <img alt="Twitter" src="twitter.png">
+                    </a>
                 </div>
+            </div>
+            <!-- Contacts section end -->
+            
+            <div class="copyright">
+                &copy; 2018 My Portfolio. All rights reserved.
             </div>
             
-            <div class="progress skill-bar">
-                <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
-                    <span class="skill">JavaScript<i class="val">75%</i></span>
-                </div>
-            </div>  
-            <div class="progress skill-bar">
-               <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
-                   <span class="skill">Python<i class="val">80%</i></span>
-               </div>
-            </div>  
-            <div class="progress skill-bar">
-               <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
-                   <span class="skill">Java<i class="val">90%</i></span>
-               </div>
-            </div>  
-            </ul>
-        </div>
-        <!-- My Skills section end -->
-        
-        
-        
-        <!-- My Schedule section start -->
-        <div class="section">
-            <h1><span>My Coding Schedule</span></h1>
-            <table>
-                <tr>
-                    <th>Day</th>
-                    <th>Mon</th>
-                    <th>Tue</th>
-                    <th>Wed</th>
-                    <th>Thu</th>
-                    <th>Fri</th>
-                </tr>
-                <tr>
-                    <td>8-8:30</td>
-                    <td class="selected">Learn</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>9-10</td>
-                    <td></td>
-                    <td class="selected">Practice</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>1-1:30</td>
-                    <td></td>
-                    <td></td>
-                    <td class="selected">Play</td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>3:45-5</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td class="selected">Code</td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>6-6:15</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td class="selected">Discuss</td>
-                </tr>
-            </table>
-        </div>
-        <!-- My Schedule section end -->
-        
-       
-         
-        <div class="section">
-            <h1><span>My Favourite opensource Projects</span></h1>
-            <div style="margin-bottom=20px;">
-                 <img style="margin-bottom=20px;" src="FOSSASIA.jpg" alt="FOSSASIA" style="width:100%">
-                    <p><a href="https://fossasia.org/" target="_blank">FOSSASIA</a> develops Open Source software and hardware for conversational AIs, science and event management with a global developer community from its base in Asia.</p>
-            </div>
-            <div>       </div>
-             <div>
-                 <img style="margin-bottom=20px;" src="GCI.jpg" alt="GCI" style="width:100%">
-                    <p><a href="https://codein.withgoogle.com/" target="_blank">Google Code-In</a>  is a contest to introduce pre-university students (ages 13-17) to open source software development. Since 2010, over 8100 students from 107 countries have completed work in the contest.</p>
-            </div> 
-        </div>
-        <div class="section" id="projects">
-            <h1><span>My Projects</span></h1>
-            <div>
-                 <img style="margin-bottom=20px;" src="hpm.jpg" alt="Help Our Mother" style="width:100%">
-                    <p><a href="https://helpourmother.dx.am/" target="_blank">Help Our Mother</a> is an web based organization to stop pollution in India.</p>
-            </div>
-        </div>
-       
-        
-        
-        <!-- Contacts section start -->
-        <div class="section" id="contact">
-            <h1><span>Follow Me</span></h1>
-            <div>
-                <a href="https://twitter.com/SahilSaha35194">
-                    <img alt="Twitter" src="twitter.png">
-                </a>
-            </div>
-        </div>
-        <!-- Contacts section end -->
-        
-        <div class="copyright">
-            &copy; 2019 My Portfolio. All rights reserved.
-        </div>
-        
-    </body>
-</html>
+        </body>
+    </html>
