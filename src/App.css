@@ -1,0 +1,112 @@
+.main__title {
+    margin-top: 20px !important;
+}
+.main__image {
+    border: 3px solid white !important;
+}
+.icon {
+    font-size: 40px;
+}
+.about__text {
+    font-size: 1.05rem !important;
+}
+
+@media screen and (min-width: 500px) {
+    .about__text {
+        font-size: 22px !important;
+    }
+    .main__image {
+        width: 150px !important;
+        height: 150px !important;
+    }
+    .btn {
+        font-size: large !important;
+    }
+    .box1 {
+        width: 105px;
+        height: 105px;
+        background-color: #3f3e3e;
+        transform: rotate(70deg);
+        border-radius: 10px;
+        position: absolute;
+        top: 10%;
+        right: 33%;
+        z-index: -1;
+    }
+    .box2 {
+        left: 35%;
+        width: 120px;
+        height: 120px;
+        background-color: #3f3e3e;
+        transform: rotate(135deg);
+        border-radius: 10px;
+        position: absolute;
+        top: 0%;
+    }
+    .box3 {
+        width: 140px;
+        height: 140px;
+        background-color: #3f3e3e;
+        transform: rotate(70deg);
+        border-radius: 10px;
+        position: absolute;
+        top: 30%;
+        z-index: -1;
+        left: 0.5%;
+    }
+    .box4 {
+        width: 120px;
+        height: 120px;
+        background-color: #3f3e3e;
+        transform: rotate(140deg);
+        border-radius: 10px;
+        position: absolute;
+        /* bottom: 0; */
+        /* left: 100%; */
+        z-index: -1;
+        left: 23%;
+        top: 33%;
+    }
+    .box5 {
+        width: 120px;
+        height: 120px;
+        background-color: #3f3e3e;
+        transform: rotate(130deg);
+        border-radius: 10px;
+        position: absolute;
+        /* bottom: 0; */
+        /* left: 100%; */
+        z-index: -1;
+        top: 28%;
+        right: 18%;
+    }
+    .box6 {
+        width: 125px;
+        height: 125px;
+        background-color: #3f3e3e;
+        transform: rotate(150deg);
+        border-radius: 10px;
+        position: absolute;
+        /* bottom: 0; */
+        /* left: 100%; */
+        z-index: -1;
+        right: 2%;
+        top: 15%;
+    }
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    border-radius: 10px;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: grey;
+    border-radius: 10px;
+  }

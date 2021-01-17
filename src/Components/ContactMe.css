@@ -1,0 +1,12 @@
+.field {
+    width: 60%;
+    margin-top: 20px !important;
+}
+.contact__illu {
+    width: 200px;
+}
+@media screen and (min-width: 500px){
+    .contact__illu {
+        width: 250px;
+    }
+}

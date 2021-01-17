@@ -1,0 +1,9 @@
+
+.edu__illu {
+    width: 200px;
+}
+@media screen and (min-width: 500px) {
+    .edu__illu {
+        width: 250px;
+    }
+}
