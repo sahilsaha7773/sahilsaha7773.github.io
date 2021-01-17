@@ -1,22 +1,39 @@
 {
   "files": {
-    "main.js": "/static/js/main.8062326b.chunk.js",
-    "main.js.map": "/static/js/main.8062326b.chunk.js.map",
+    "main.css": "/static/css/main.42bbdd64.chunk.css",
+    "main.js": "/static/js/main.07d5cb29.chunk.js",
+    "main.js.map": "/static/js/main.07d5cb29.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.19ccc7f6.js",
     "runtime-main.js.map": "/static/js/runtime-main.19ccc7f6.js.map",
-    "static/js/2.f388a164.chunk.js": "/static/js/2.f388a164.chunk.js",
-    "static/js/2.f388a164.chunk.js.map": "/static/js/2.f388a164.chunk.js.map",
+    "static/js/2.b0434807.chunk.js": "/static/js/2.b0434807.chunk.js",
+    "static/js/2.b0434807.chunk.js.map": "/static/js/2.b0434807.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.1789e09761c5be0ecfde2a1ab6cb04d3.js": "/precache-manifest.1789e09761c5be0ecfde2a1ab6cb04d3.js",
+    "precache-manifest.02321f81d25f57d29c8ff824939acab0.js": "/precache-manifest.02321f81d25f57d29c8ff824939acab0.js",
     "service-worker.js": "/service-worker.js",
-    "static/js/2.f388a164.chunk.js.LICENSE.txt": "/static/js/2.f388a164.chunk.js.LICENSE.txt",
+    "static/css/main.42bbdd64.chunk.css.map": "/static/css/main.42bbdd64.chunk.css.map",
+    "static/js/2.b0434807.chunk.js.LICENSE.txt": "/static/js/2.b0434807.chunk.js.LICENSE.txt",
+    "static/media/C++.svg": "/static/media/C++.40701fe0.svg",
+    "static/media/CSS.svg": "/static/media/CSS.563ed23a.svg",
     "static/media/GCI 2018 Certificate for Sahil Saha.pdf": "/static/media/GCI 2018 Certificate for Sahil Saha.1032e0e9.pdf",
+    "static/media/HTML.svg": "/static/media/HTML.0ef0c5d8.svg",
+    "static/media/Node2.svg": "/static/media/Node2.7948ff2c.svg",
+    "static/media/React.svg": "/static/media/React.03e21baf.svg",
+    "static/media/contactIllu.svg": "/static/media/contactIllu.72fc8b1a.svg",
+    "static/media/django.svg": "/static/media/django.967d003a.svg",
+    "static/media/eduIllu.svg": "/static/media/eduIllu.a22cbb3b.svg",
+    "static/media/firebase.svg": "/static/media/firebase.e8e8130a.svg",
+    "static/media/java.svg": "/static/media/java.a732a6e5.svg",
+    "static/media/javascript.svg": "/static/media/javascript.87711407.svg",
     "static/media/jssl.pdf": "/static/media/jssl.420430a5.pdf",
-    "static/media/myImg.jpg": "/static/media/myImg.f863fcd1.jpg"
+    "static/media/mongo.svg": "/static/media/mongo.c2a864c9.svg",
+    "static/media/myImg2.jpg": "/static/media/myImg2.cf285ff1.jpg",
+    "static/media/python.svg": "/static/media/python.51c2eab2.svg",
+    "static/media/skillsIllu.svg": "/static/media/skillsIllu.34409398.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.19ccc7f6.js",
-    "static/js/2.f388a164.chunk.js",
-    "static/js/main.8062326b.chunk.js"
+    "static/js/2.b0434807.chunk.js",
+    "static/css/main.42bbdd64.chunk.css",
+    "static/js/main.07d5cb29.chunk.js"
   ]
 }
