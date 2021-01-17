@@ -5,6 +5,17 @@
 .contact__illu {
     width: 200px;
 }
+.send {
+    margin: 20px;
+    background-color: #3f51b5;
+    color: white;
+    font-size: large;
+    padding: 10px;
+    border-radius: 2px;
+    border: 0px;
+    font-weight: 600;
+
+}
 @media screen and (min-width: 500px){
     .contact__illu {
         width: 250px;
