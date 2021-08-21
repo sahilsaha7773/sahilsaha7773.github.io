@@ -1,0 +1,25 @@
+.main__title{
+  font-weight: 600 !important;
+  margin: 20px 0 0 0 !important;
+}
+
+/* .main__image {
+  border: 3px solid white !important;
+} */
+.icon {
+  font-size: 40px;
+}
+.skills-container a img {
+  margin: 10px;
+  width: 55px;
+}
+.skills-container a{
+  text-decoration: none;
+}
+.skills-container{
+  margin-top: 40px;
+}
+.about__text {
+  font-size: 1.5rem !important;
+  font-weight: 200 !important;
+}
