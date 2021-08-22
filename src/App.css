@@ -1,6 +1,9 @@
+body {
+  height: 100%;
+}
 .main {
   display: flex;
-  /* align-items: center; */
+  align-items: center;
   text-align: center;
   margin-top: 100px;
   flex-wrap: wrap;
@@ -22,18 +25,30 @@ font-weight: 800 !important;
   font-family: 'Lato' !important;
 }
 
-.navbar-right a {
+.navbar-left a, .navbar-right a{
   text-decoration: none;
+  
 }
-.navbar-right button {
-  font-size: 15px;
-  margin: 0 10px;
+.navbar-left button, .navbar-right button {
+  font-size: 18px;
+  margin: 0;
+  border: 0;
+  font-weight: 600 !important;
+  color: white !important;
+  text-transform: none;
 }
 
 .MuiTab-root {
   font-weight: 700 !important;
+  text-transform: none  !important;
+  font-size: 20px !important;
 }
-
+.MuiTabs-root {
+  position: absolute;
+}
+.drawer-btn {
+  display: none !important;
+}
 @media only screen and (max-width: 1200px){
   /*Tablets [601px -> 1200px]*/
 }
@@ -42,8 +57,28 @@ font-weight: 800 !important;
     font-size: 15px;
     margin: 0;
   }
+  .main__image {
+    width: 100px !important;
+    height: 100px !important;
+  }
+  .main__title {
+    font-size: 2.5rem !important;
+  }
+  .about__text {
+    font-size: 23px !important;
+  }
   .main-body{
     margin-top: 40px;
+  }
+  .navbar-link {
+    display: none;
+  }
+  .drawer-btn{
+    display: block !important;
+    margin: 0 10px 0 20px;
+  }
+  .drawer-btn-light {
+    color: black !important;
   }
 }
 @media only screen and (max-width: 425px){

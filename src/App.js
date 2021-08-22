@@ -1,5 +1,5 @@
 import './App.css';
-import { createTheme, Paper, Drawer, ThemeProvider, CssBaseline, AppBar, Toolbar, IconButton, Typography, Button, Avatar, Container, Switch, createMuiTheme, Tabs, Tab, SwipeableDrawer } from '@material-ui/core';
+import { createTheme, Paper, withStyles, Drawer, ThemeProvider, CssBaseline, AppBar, Toolbar, IconButton, Typography, Button, Avatar, Container, Switch, createMuiTheme, Tabs, Tab, SwipeableDrawer } from '@material-ui/core';
 import { useEffect, useState } from 'react';
 import logoSS from './images/logoSS.png';
 
@@ -16,9 +16,63 @@ import Projects from './pages/Projects';
 import { Brightness4, Brightness7, Close, Menu } from '@material-ui/icons';
 import Cookies from 'js-cookie';
 import CookieConsent from 'react-cookie-consent';
+import Footer from './components/Footer';
 
 function App() {
   const [mode, setMode] = useState('light');
+  const IOSSwitch = withStyles((theme) => ({
+    root: {
+      width: 42,
+      height: 26,
+      padding: 0,
+      margin: theme.spacing(1),
+    },
+    switchBase: {
+      padding: 1,
+      '&$checked': {
+        transform: 'translateX(16px)',
+        color: theme.palette.common.white,
+        '& + $track': {
+          backgroundColor: '#242337',
+          opacity: 1,
+          border: 'none',
+        },
+      },
+      '&$focusVisible $thumb': {
+        color: '#242337',
+        border: '6px solid #fff',
+      },
+    },
+    thumb: {
+      width: 24,
+      height: 24,
+    },
+    track: {
+      borderRadius: 26 / 2,
+      border: `1px solid ${theme.palette.grey[400]}`,
+      backgroundColor: theme.palette.grey[50],
+      opacity: 1,
+      transition: theme.transitions.create(['background-color', 'border']),
+    },
+    checked: {},
+    focusVisible: {},
+  }))(({ classes, ...props }) => {
+    return (
+      <Switch
+        focusVisibleClassName={classes.focusVisible}
+        disableRipple
+        classes={{
+          root: classes.root,
+          switchBase: classes.switchBase,
+          thumb: classes.thumb,
+          track: classes.track,
+          checked: classes.checked,
+        }}
+        {...props}
+      />
+    );
+  });
+
   useEffect(() => {
     setMode(Cookies.get('mode') === undefined ? 'light' : Cookies.get('mode'));
   }, []);
@@ -27,6 +81,12 @@ function App() {
   const theme = createTheme({
     palette: {
       type: mode,
+      primary: {
+        main: "rgb(6 148 76)"
+      },
+      secondary: {
+        main: "rgb(6 148 76)"
+      }
     },
   });
 
@@ -62,13 +122,25 @@ function App() {
           <Button variant="outlined" >Awards</Button>
         </Drawer>
         <div className="App" >
-          <AppBar position="static" color="primary" style={{ backgroundColor: mode == 'dark' ? "transparent" : "#fff" }}>
+          <AppBar position="fixed" color="primary" style={{ backgroundColor: mode == 'dark' ? "rgb(6 148 76)" : "rgb(6 148 76)" }}>
             <Toolbar>
+
               <Link to="/">
                 <IconButton edge="start" color="inherit" aria-label="menu">
-                  <img src={logoSS} width="60px" />
+                  <img src={logoSS} width="45px" />
                 </IconButton>
               </Link>
+              <div className="navbar-left">
+                <Link to='/blog' className="navbar-link">
+                  <Button variant="outlined" >Blog</Button>
+                </Link>
+                <Link to='/projects' className="navbar-link">
+                  <Button variant="outlined" >Projects</Button>
+                </Link>
+                <Link to='/projects' className="navbar-link">
+                  <Button variant="outlined" >Awards</Button>
+                </Link>
+              </div>
 
               <div style={{
                 marginLeft: 'auto',
@@ -76,14 +148,10 @@ function App() {
                 alignItems: 'center'
               }}
                 className="navbar-right">
-                <Link to='/blog'>
-                  <Button variant="outlined" >Blog</Button>
+                <Link to='/blog' className="navbar-link">
+                  <Button variant="outlined" >Resume</Button>
                 </Link>
-                <Link to='/projects'>
-                  <Button variant="outlined" >Projects</Button>
-                </Link>
-                <Button variant="outlined" >Awards</Button>
-                <Switch
+                <IOSSwitch
                   color="primary"
                   checked={mode == 'dark' ? true : false}
                   onChange={(e) => {
@@ -96,13 +164,15 @@ function App() {
                   mode === 'light' ? (
                     <Brightness7 style={{ color: "black" }} />
                   ) : (
-                    <Brightness4 />
+                    <Brightness4 style={{ color: "black" }} />
                   )
                 }
                 <Menu
                   onClick={(e) => {
                     setDrawerOpen(!drawerOpen);
                   }}
+                  style={{ color: "black" }}
+                  className={`drawer-btn ${mode === 'light' && 'drawer-btn-light'}`}
                 />
               </div>
             </Toolbar>
@@ -112,6 +182,7 @@ function App() {
             <Route exact path="/blog" component={Blog} />
             <Route exact path="/projects" component={Projects} />
           </SwitchRoute>
+          <Footer />
         </div>
         {/* <Typography variant="subtitle1" style={{ textAlign: "center", marginTop: "40px" }}>Made with ❤️</Typography> */}
 

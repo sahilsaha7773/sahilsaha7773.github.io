@@ -8,7 +8,7 @@ function Education() {
     <div>
       <Card style={{ width: "100%", padding: "40px 20px" }}>
         <Container style={{ textAlign: 'center', marginBottom: 40 }}>
-          <img className="edu__illu" src={eduIllu} width="200px" />
+          {/* <img className="edu__illu" src={eduIllu} width="200px" /> */}
           <Timeline align="alternate">
             <TimelineItem>
               <TimelineOppositeContent>

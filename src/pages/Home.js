@@ -16,7 +16,7 @@ function Home() {
     },
     'icon': {
       marginTop: 20,
-      marginBottom: 20
+      marginBottom: 10
     }
   }
   return (
@@ -42,16 +42,18 @@ function Home() {
           <IconButton style={styles.icon} href="https://linkedin.com/in/sahil-saha-76478516b" target="blank">
             <LinkedIn fontSize="large" />
           </IconButton>
-          <Container style={{ width: "70%" }}>
-            <Typography variant="subtitle1" gutterBottom className="about__text">
-              Glad to see you here! I am a passionate developer from India, I love to make cool projects and solve coding problems in my free time.
+          <Container style={{ width: "85%" }}>
+            <Typography variant="subtitle2" gutterBottom className="about__text" style={{ fontSize: "23px" }}>
+              Glad to see you here!<br /> I am a passionate developer from India.<br /> I love to make cool projects and solve coding problems in my free time.
             </Typography>
           </Container>
 
         </div>
         <div className="main-body">
+
+
           <div>
-            <Tabs value={tabValue}>
+            <Tabs value={tabValue} >
               <Tab onClick={(e) => setTabValue(0)} label="Skills" style={{ fontWeight: "700 !important" }} />
               <Tab onClick={(e) => setTabValue(1)} label="Education" style={{ fontWeight: "700 !important" }} />
               {/* <Tab onClick={(e) => setTabValue(2)} label="Awards" /> */}

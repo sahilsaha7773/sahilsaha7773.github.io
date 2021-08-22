@@ -8,13 +8,13 @@ function Skills() {
     <div>
       <Card style={{
         width: "100%",
-        padding: "60px 20px",
+        padding: "80px 20px",
         // marginLeft: 'auto',
         // marginRight: 'auto',
       }}>
         <Container style={{ textAlign: 'center', marginBottom: 20 }}>
           <div style={{}}>
-            <img src={skillsIllu} className="skills__illu" width="200px" />
+            {/* <img src={skillsIllu} className="skills__illu" width="200px" /> */}
             {/* <Typography color="inherit" variant="h5" style={{ marginTop: "20px" }}>
               Skills
             </Typography> */}
