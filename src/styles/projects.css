@@ -1,4 +1,23 @@
 .projects-container {
   margin: 150px 40px;
-  height: 400px;
+  height: 1100px;
+}
+.row {
+  display: flex;
+  align-items: center;
+  overflow: auto;
+}
+
+.project-card {
+  margin: 20px;
+  min-width: 350px;
+}
+.project-gh {
+  margin: 20px 0 20px 15px;
+  text-decoration: none !important;
+  color: inherit;
+}
+.project-gh:hover {
+  cursor: pointer !important;
+  transform: scale(1.2);
 }

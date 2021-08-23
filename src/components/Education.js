@@ -7,7 +7,7 @@ function Education() {
   return (
     <div>
       <Card style={{ width: "100%", padding: "40px 20px" }}>
-        <Container style={{ textAlign: 'center', marginBottom: 40 }}>
+        <Container style={{ textAlign: 'center', marginBottom: 40, marginTop: "40px" }}>
           {/* <img className="edu__illu" src={eduIllu} width="200px" /> */}
           <Timeline align="alternate">
             <TimelineItem>
@@ -24,7 +24,7 @@ function Education() {
             </TimelineItem>
             <TimelineItem>
               <TimelineOppositeContent>
-                <Typography style={{ fontSize: "18px" }} color="textSecondary">March 2012 - May 2018</Typography>
+                <Typography style={{ fontSize: "18px" }} color="textSecondary">May 2016 - May 2018</Typography>
               </TimelineOppositeContent>
               <TimelineSeparator>
                 <TimelineDot />

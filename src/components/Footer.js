@@ -16,7 +16,7 @@ function Footer() {
       if (xhr.readyState !== XMLHttpRequest.DONE) return;
       if (xhr.status === 200) {
         form.reset();
-        console.log("sadasdsa");
+        //console.log("sadasdsa");
         setStatus({ status: "SUCCESS" });
       } else {
         setStatus({ status: "ERROR" });
@@ -25,7 +25,7 @@ function Footer() {
     xhr.send(data);
   }
   return (
-    <div className="footer">
+    <footer className="footer">
       <div style={{ fontSize: "large" }} className="contact-div">
         <img className="contact__illu" />
         <form
@@ -33,9 +33,9 @@ function Footer() {
           action="https://formspree.io/f/meqpnjyo"
           method="POST"
         >
-          <h2 style={{ color: "white" }}>Contact me</h2>
+          <h2 style={{ color: "white", margin: "20px 0 20px 0" }}>Contact me</h2>
           <TextField style={{ width: "100%", color: "white" }} className="field" label="Email" name="email" variant="outlined" /><br />
-          <TextField style={{ width: "100%", margin: "20px 0 0 0", color: "white" }} className="field" label="Message" name="message" multiline rows={4} variant="outlined" /><br />
+          <TextField style={{ width: "100%", margin: "20px 0 0 0", color: "white !important" }} className="field" label="Message" name="message" multiline rows={4} variant="outlined" /><br />
           {/* <label>Email:</label>
           <input type="email" name="email" />
           <label>Message:</label>
@@ -52,16 +52,16 @@ function Footer() {
           <img src={logoSS} width="160px" className="footer-logo" style={{ objectFit: "contain" }} />
         </div>
         <div className="footer-site">
-          <Link to='/blog'>
+          {/* <Link to='/blog'>
             Blog
-          </Link>
-          <Link to='/blog'>
+          </Link> */}
+          <Link to='/projects'>
             Projects
           </Link>
-          <Link to='/blog'>
+          <a href="https://drive.google.com/file/d/1tBbNaIsl-ceApFpRjAwfgJDz_cWPrPr5/view?usp=sharing" target="_blank" className="navbar-link">
             Resume
-          </Link>
-          <p style={{ color: 'white' }}>Made with ❤️ and ☕</p>
+          </a>
+          <p style={{ color: 'white', margin: "20px 0", }}>Made with ❤️ and ☕</p>
         </div>
         <div className="footer-social">
           <a href='https://github.com/sahilsaha7773' target="_blank">
@@ -75,7 +75,7 @@ function Footer() {
           </a>
         </div>
       </div>
-    </div>
+    </footer>
   )
 }
 

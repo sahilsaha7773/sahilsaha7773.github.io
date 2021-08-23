@@ -49,7 +49,7 @@ function Home() {
           </Container>
 
         </div>
-        <div className="main-body">
+        <div className="main-body floating">
 
 
           <div>
