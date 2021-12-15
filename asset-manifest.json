@@ -1,27 +1,29 @@
 {
   "files": {
-    "main.css": "/static/css/main.3429e2b5.chunk.css",
-    "main.js": "/static/js/main.573cf1f1.chunk.js",
-    "main.js.map": "/static/js/main.573cf1f1.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.094ff1db.js",
-    "runtime-main.js.map": "/static/js/runtime-main.094ff1db.js.map",
-    "static/js/2.483c72c3.chunk.js": "/static/js/2.483c72c3.chunk.js",
-    "static/js/2.483c72c3.chunk.js.map": "/static/js/2.483c72c3.chunk.js.map",
-    "static/js/3.0c093849.chunk.js": "/static/js/3.0c093849.chunk.js",
-    "static/js/3.0c093849.chunk.js.map": "/static/js/3.0c093849.chunk.js.map",
+    "main.css": "/static/css/main.5100e81d.chunk.css",
+    "main.js": "/static/js/main.72e55797.chunk.js",
+    "main.js.map": "/static/js/main.72e55797.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.f6ad0477.js",
+    "runtime-main.js.map": "/static/js/runtime-main.f6ad0477.js.map",
+    "static/js/2.cdcf86d8.chunk.js": "/static/js/2.cdcf86d8.chunk.js",
+    "static/js/2.cdcf86d8.chunk.js.map": "/static/js/2.cdcf86d8.chunk.js.map",
+    "static/js/3.1d5cd5dd.chunk.js": "/static/js/3.1d5cd5dd.chunk.js",
+    "static/js/3.1d5cd5dd.chunk.js.map": "/static/js/3.1d5cd5dd.chunk.js.map",
     "index.html": "/index.html",
-    "static/css/main.3429e2b5.chunk.css.map": "/static/css/main.3429e2b5.chunk.css.map",
-    "static/js/2.483c72c3.chunk.js.LICENSE.txt": "/static/js/2.483c72c3.chunk.js.LICENSE.txt",
+    "static/css/main.5100e81d.chunk.css.map": "/static/css/main.5100e81d.chunk.css.map",
+    "static/js/2.cdcf86d8.chunk.js.LICENSE.txt": "/static/js/2.cdcf86d8.chunk.js.LICENSE.txt",
+    "static/media/Pigeonss.6420b88d.png": "/static/media/Pigeonss.6420b88d.png",
     "static/media/cptracker2.b67ddcb1.png": "/static/media/cptracker2.b67ddcb1.png",
     "static/media/eduIllu.7b85a9ab.svg": "/static/media/eduIllu.7b85a9ab.svg",
     "static/media/logoSS.f18d967d.png": "/static/media/logoSS.f18d967d.png",
-    "static/media/myImg2.2a76d9b9.jpg": "/static/media/myImg2.2a76d9b9.jpg",
+    "static/media/medcampss.4c77fd46.png": "/static/media/medcampss.4c77fd46.png",
+    "static/media/myImg3.5da3903d.jpg": "/static/media/myImg3.5da3903d.jpg",
     "static/media/skillsIllu.35a14766.svg": "/static/media/skillsIllu.35a14766.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.094ff1db.js",
-    "static/js/2.483c72c3.chunk.js",
-    "static/css/main.3429e2b5.chunk.css",
-    "static/js/main.573cf1f1.chunk.js"
+    "static/js/runtime-main.f6ad0477.js",
+    "static/js/2.cdcf86d8.chunk.js",
+    "static/css/main.5100e81d.chunk.css",
+    "static/js/main.72e55797.chunk.js"
   ]
 }
