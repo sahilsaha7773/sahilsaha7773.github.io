@@ -1,26 +1,45 @@
-import './App.css';
-import { createTheme, Paper, withStyles, Drawer, ThemeProvider, CssBaseline, AppBar, Toolbar, IconButton, Typography, Button, Avatar, Container, Switch, createMuiTheme, Tabs, Tab, SwipeableDrawer } from '@material-ui/core';
-import { useEffect, useState } from 'react';
-import logoSS from './images/logoSS.png';
-import Loader from 'react-loaders'
-
-import Home from './pages/Home';
-import './styles/index.css';
+import "./App.css";
 import {
-  BrowserRouter as Router,
+  createTheme,
+  Paper,
+  withStyles,
+  Drawer,
+  ThemeProvider,
+  CssBaseline,
+  AppBar,
+  Toolbar,
+  IconButton,
+  Typography,
+  Button,
+  Avatar,
+  Container,
+  Switch,
+  createMuiTheme,
+  Tabs,
+  Tab,
+  SwipeableDrawer,
+} from "@material-ui/core";
+import { useEffect, useState } from "react";
+import logoSS from "./images/logoSS.png";
+import Loader from "react-loaders";
+
+import Home from "./pages/Home";
+import "./styles/index.css";
+import {
+  HashRouter as Router,
   Switch as SwitchRoute,
   Route,
-  Link
+  Link,
 } from "react-router-dom";
-import Blog from './pages/Blog';
-import Projects from './pages/Projects';
-import { Brightness4, Brightness7, Close, Menu } from '@material-ui/icons';
-import Cookies from 'js-cookie';
-import CookieConsent from 'react-cookie-consent';
-import Footer from './components/Footer';
+import Blog from "./pages/Blog";
+import Projects from "./pages/Projects";
+import { Brightness4, Brightness7, Close, Menu } from "@material-ui/icons";
+import Cookies from "js-cookie";
+import CookieConsent from "react-cookie-consent";
+import Footer from "./components/Footer";
 
 function App() {
-  const [mode, setMode] = useState('light');
+  const [mode, setMode] = useState("light");
   const [isLoading, setIsLoading] = useState(false);
   const IOSSwitch = withStyles((theme) => ({
     root: {
@@ -31,18 +50,18 @@ function App() {
     },
     switchBase: {
       padding: 1,
-      '&$checked': {
-        transform: 'translateX(16px)',
+      "&$checked": {
+        transform: "translateX(16px)",
         color: theme.palette.common.white,
-        '& + $track': {
-          backgroundColor: '#242337',
+        "& + $track": {
+          backgroundColor: "#242337",
           opacity: 1,
-          border: 'none',
+          border: "none",
         },
       },
-      '&$focusVisible $thumb': {
-        color: '#242337',
-        border: '6px solid #fff',
+      "&$focusVisible $thumb": {
+        color: "#242337",
+        border: "6px solid #fff",
       },
     },
     thumb: {
@@ -54,7 +73,7 @@ function App() {
       border: `1px solid ${theme.palette.grey[400]}`,
       backgroundColor: theme.palette.grey[50],
       opacity: 1,
-      transition: theme.transitions.create(['background-color', 'border']),
+      transition: theme.transitions.create(["background-color", "border"]),
     },
     checked: {},
     focusVisible: {},
@@ -76,7 +95,7 @@ function App() {
   });
 
   useEffect(() => {
-    setMode(Cookies.get('mode') === undefined ? 'light' : Cookies.get('mode'));
+    setMode(Cookies.get("mode") === undefined ? "light" : Cookies.get("mode"));
   }, []);
   const [drawerOpen, setDrawerOpen] = useState(false);
   //Create MUI theme
@@ -84,11 +103,11 @@ function App() {
     palette: {
       type: mode,
       primary: {
-        main: "rgb(6 148 76)"
+        main: "rgb(6 148 76)",
       },
       secondary: {
-        main: "rgb(6 148 76)"
-      }
+        main: "rgb(6 148 76)",
+      },
     },
   });
 
@@ -110,29 +129,30 @@ function App() {
           </CookieConsent>
           <Router>
             <CssBaseline />
-            <Drawer
-              anchor="right"
-              open={drawerOpen}
-            >
+            <Drawer anchor="right" open={drawerOpen}>
               <Close
                 onClick={(e) => {
                   setDrawerOpen(false);
                 }}
               />
-              <Link to='/blog'>
-                <Button variant="outlined" >Blog</Button>
+              <Link to="/blog">
+                <Button variant="outlined">Blog</Button>
               </Link>
-              <Link to='/projects'>
-                <Button variant="outlined" >Projects</Button>
+              <Link to="/projects">
+                <Button variant="outlined">Projects</Button>
               </Link>
               {/* <Button variant="outlined" >Awards</Button> */}
             </Drawer>
-            <div className="App" style={{
-
-            }}>
-              <AppBar position="fixed" color="primary" style={{ backgroundColor: mode == 'dark' ? "rgb(6 148 76)" : "rgb(6 148 76)" }}>
+            <div className="App" style={{}}>
+              <AppBar
+                position="fixed"
+                color="primary"
+                style={{
+                  backgroundColor:
+                    mode == "dark" ? "rgb(6 148 76)" : "rgb(6 148 76)",
+                }}
+              >
                 <Toolbar>
-
                   <Link to="/">
                     <IconButton edge="start" color="inherit" aria-label="menu">
                       <img src={logoSS} width="45px" />
@@ -142,45 +162,54 @@ function App() {
                     {/* <Link to='/blog' className="navbar-link">
                   <Button variant="outlined" >Blog</Button>
                 </Link> */}
-                    <Link to='/projects' className="navbar-link">
-                      <Button variant="outlined" >Projects</Button>
+                    <Link to="/projects" className="navbar-link">
+                      <Button variant="outlined">Projects</Button>
                     </Link>
                     {/* <Link to='/projects' className="navbar-link">
                   <Button variant="outlined" >Awards</Button>
                 </Link> */}
                   </div>
 
-                  <div style={{
-                    marginLeft: 'auto',
-                    display: 'flex',
-                    alignItems: 'center'
-                  }}
-                    className="navbar-right">
-                    <a href="https://drive.google.com/file/d/1tBbNaIsl-ceApFpRjAwfgJDz_cWPrPr5/view?usp=sharing" target="_blank" className="navbar-link">
-                      <Button variant="outlined" >Resume</Button>
+                  <div
+                    style={{
+                      marginLeft: "auto",
+                      display: "flex",
+                      alignItems: "center",
+                    }}
+                    className="navbar-right"
+                  >
+                    <a
+                      href="https://drive.google.com/file/d/1tBbNaIsl-ceApFpRjAwfgJDz_cWPrPr5/view?usp=sharing"
+                      target="_blank"
+                      className="navbar-link"
+                    >
+                      <Button variant="outlined">Resume</Button>
                     </a>
                     <IOSSwitch
                       color="primary"
-                      checked={mode == 'dark' ? true : false}
+                      checked={mode == "dark" ? true : false}
                       onChange={(e) => {
-                        setMode(e.target.checked ? 'dark' : 'light');
-                        if (Cookies.get('CookieConsent'))
-                          Cookies.set('mode', e.target.checked ? 'dark' : 'light');
+                        setMode(e.target.checked ? "dark" : "light");
+                        if (Cookies.get("CookieConsent"))
+                          Cookies.set(
+                            "mode",
+                            e.target.checked ? "dark" : "light"
+                          );
                       }}
                     />
-                    {
-                      mode === 'light' ? (
-                        <Brightness7 style={{ color: "black" }} />
-                      ) : (
-                        <Brightness4 style={{ color: "black" }} />
-                      )
-                    }
+                    {mode === "light" ? (
+                      <Brightness7 style={{ color: "black" }} />
+                    ) : (
+                      <Brightness4 style={{ color: "black" }} />
+                    )}
                     <Menu
                       onClick={(e) => {
                         setDrawerOpen(!drawerOpen);
                       }}
                       style={{ color: "black" }}
-                      className={`drawer-btn ${mode === 'light' && 'drawer-btn-light'}`}
+                      className={`drawer-btn ${
+                        mode === "light" && "drawer-btn-light"
+                      }`}
                     />
                   </div>
                 </Toolbar>

@@ -1,6 +1,6 @@
 import React from 'react'
 import { createTheme, Paper, ThemeProvider, CssBaseline, AppBar, Toolbar, IconButton, Typography, Button, Avatar, Container, Switch, createMuiTheme, Tabs, Tab } from '@material-ui/core';
-import myImg2 from '../images/myImg2.jpg'
+import penguin from '../images/penguin.png'
 import { Class, Code, Facebook, GitHub, Instagram, LinkedIn, Twitter } from '@material-ui/icons';
 import Skills from '../components/Skills';
 import Education from '../components/Education';
@@ -23,7 +23,7 @@ function Home() {
     <div>
       <div className="main">
         <div className="main-header">
-          <Avatar alt="Sahil Saha" src={myImg2} style={{ width: 130, height: 130, marginLeft: 'auto', marginRight: 'auto' }} className="main__image" />
+          <Avatar alt="Sahil Saha" src={penguin} style={{ width: 130, height: 130, marginLeft: 'auto', marginRight: 'auto' }} className="main__image" />
           <Typography variant="h3" className="main__title">
             Sahil Saha
           </Typography>

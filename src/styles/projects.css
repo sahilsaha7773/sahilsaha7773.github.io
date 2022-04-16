@@ -1,11 +1,11 @@
 .projects-container {
   margin: 150px 40px;
-  height: 1100px;
 }
 .row {
   display: flex;
   align-items: center;
   overflow: auto;
+  margin-bottom: 40px;
 }
 
 .project-card {
