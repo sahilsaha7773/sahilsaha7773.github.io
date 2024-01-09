@@ -65,6 +65,11 @@ export default function Home() {
                   // color="warning"
                   variant="faded"
                   // aria-label="Take a photo"
+                  onClick={() => {
+                    window.open(
+                      "https://www.linkedin.com/in/sahil-saha-76478516b/"
+                    );
+                  }}
                 >
                   <FaLinkedinIn />
                 </Button>
@@ -73,6 +78,9 @@ export default function Home() {
                   color="default"
                   className="text-xl lg:text-3xl"
                   variant="faded"
+                  onClick={() => {
+                    window.open("https://github.com/sahilsaha7773");
+                  }}
                 >
                   <FaGithub />
                 </Button>
@@ -81,6 +89,9 @@ export default function Home() {
                   color="default"
                   className="text-xl lg:text-3xl"
                   variant="faded"
+                  onClick={() => {
+                    window.open("https://www.instagram.com/_.sahil.s._/");
+                  }}
                 >
                   <FaInstagram />
                 </Button>
@@ -89,6 +100,9 @@ export default function Home() {
                   color="default"
                   className="text-xl lg:text-3xl"
                   variant="faded"
+                  onClick={() => {
+                    window.open("mailto:sahilsaha7773@gmail.com");
+                  }}
                 >
                   <FaEnvelope />
                 </Button>
