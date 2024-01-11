@@ -41,18 +41,17 @@ export default function Home() {
           className="mx-5 mt-10 lg:my-10 lg:ml-10 lg:mr-5 shadow-sm mx transslate-x-[-200%]"
           id="info"
         >
-          <CardBody className="lg:grid md:grid grid-cols-6 items-center justify-center gap-5 py-10 lg:p-5 md:p-5">
-            <div className="relative col-span-2 md:col-span-2">
+          <CardBody className="lg:grid md:grid grid-cols-6 md:grid-cols-12 items-center justify-center gap-5 py-10 lg:p-5 md:p-5">
+            <div className="relative col-span-6 md:col-span-4">
               <Image
                 width={200}
                 height={200}
                 radius="full"
                 alt="NextUI hero Image"
                 src="me.jpeg"
-                // src="https://thumbs.dreamstime.com/b/cartoon-avatar-designer-ai-generated-programmer-avatar-designer-ai-generated-programmer-cartoon-character-programming-286004113.jpg"
               />
             </div>
-            <div className="flex flex-col justify-center text-nowrap">
+            <div className="flex flex-col col-span-6 md:col-span-8 justify-center text-nowrap">
               <div className="text-3xl lg:text-5xl font-bold text-inherit">
                 Sahil Saha
               </div>
@@ -245,7 +244,7 @@ export default function Home() {
       <Divider />
       <div className="mx-auto my-10" id="contactMe">
         <div className="lg:flex justify-center">
-          <div className="flex-1">
+          <div className="flex-1 mx-8 overflow-x-scroll">
             <Lottie
               options={contactLottieOptions}
               height={350}
