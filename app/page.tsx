@@ -35,7 +35,7 @@ export default function Home() {
   const [state, handleSubmit] = useForm("meqpnjyo");
 
   return (
-    <main className="dark text-foreground bg-background">
+    <main className="dark text-foreground bg-background overflow-x-hidden">
       <div className="grid lg:grid-cols-2 grid-cols-1 ">
         <Card
           className="mx-5 mt-10 lg:my-10 lg:ml-10 lg:mr-5 shadow-sm mx transslate-x-[-200%]"
@@ -244,7 +244,7 @@ export default function Home() {
       <Divider />
       <div className="mx-auto my-10" id="contactMe">
         <div className="lg:flex justify-center">
-          <div className="flex-1 mx-8 overflow-x-scroll">
+          <div className="flex-1 mx-8">
             <Lottie
               options={contactLottieOptions}
               height={350}
