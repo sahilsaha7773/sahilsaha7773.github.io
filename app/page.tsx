@@ -22,6 +22,72 @@ import { useMemo } from "react";
 import { useForm, ValidationError } from "@formspree/react";
 
 export default function Home() {
+  const workExperiences = useMemo(() => [
+    {
+      name: "VideoVerse",
+      time: "Jun 2024 - Present",
+      image: "vvlogo.png",
+      imageWidth: 150,
+      imageHeight: 150,
+      role: "Software Development Engineer I",
+      description: (
+        <div>
+          • Revamped legacy React.js + Redux frontend, resulting in a significant improvement in page load times and a high reduction in UI‑related bugs.<br /><br />
+          • Took full ownership of the front‑end codebase, resolving 90% of on‑call tickets within SLA.<br /><br />
+          • Migrated front‑end build system from CRA to Rsbuild, cutting build and debugging times by over 50%.<br /><br />
+          • Built robust, event‑driven backend features by leveraging AWS SQS and SNS for decoupled service communication and enhanced fault toler‑
+          ance in distributed systems.<br /><br />
+          • Developed backend services using NestJS, TypeScript and PostgreSQL, supporting migration from monolith to microservices.<br /><br />
+          • Delivered 2+ internal full‑stack tools to automate operational tasks, reducing manual workload by 90%.
+        </div>
+      ),
+      tech: ["React", "TypeScript", "JavaScript", "CSS", "HTML", "Redux", "Nest JS", "MongoDB", "Postgres", "Docker", "AWS"]
+    },
+    {
+      name: "Let's Dive",
+      time: "Nov 2023 - Feb 2024",
+      image: "Dive.png",
+      imageWidth: 150,
+      imageHeight: 150,
+      isIntern: true,
+      role: "Software Engineer Intern",
+      description: "Revamped React front end pages, fixed bugs and added new features to prod which improved the user experience significantly while collaborating with the backend team to integrate APIs.",
+      tech: ["React", "TypeScript", "JavaScript", "CSS", "HTML", "Redux"]
+    },
+    {
+      name: "Appwrite",
+      time: "May 2023 - Aug 2023",
+      image: "appwrite2.svg",
+      imageWidth: 80,
+      imageHeight: 150,
+      isIntern: true,
+      role: "Software Engineer Intern",
+      description: "Created a lite and fast open-source micro PHP library that provides a convenient and flexible way to perform HTTP requests in PHP applications and will be used everywhere in Appwrite. Worked on the appwrite SDK generator and updated the API specs to include error types constants in all the SDKs.",
+      tech: ["PHP"]
+    },
+    // {
+    //   name: "Urban Ladder",
+    //   time: "Aug 22 - Nov 22",
+    //   image: "urbanLadder.svg",
+    //   imageWidth: 150,
+    //   imageHeight: 150,
+    //   isIntern: true,
+    //   description: "Integrated jaegar request tracing across microservices which helped to monitor and troubleshoot problems across services.",
+    //   tech: ["Ruby on Rails"]
+    // },
+    {
+      name: "TruckX",
+      time: "Feb 2022 - Aug 2022",
+      image: "truckxLogo.png",
+      imageWidth: 150,
+      imageHeight: 150,
+      isIntern: true,
+      role: "Software Engineer Intern",
+      description: `Written microservices to support new types of IOT tracking devices.\nDeveloped parsers for data that were sent from IOT devices that follows new communication protocols and fixed bugs of multiple microservices.`,
+      tech: ["Python", "Microservices", "Docker", "Kubernetes"]
+    }
+  ], []);
+
   const contactLottieOptions = useMemo(() => {
     return {
       loop: true,
@@ -47,7 +113,6 @@ export default function Home() {
                 width={200}
                 height={200}
                 radius="full"
-                alt="NextUI hero Image"
                 src="me.jpeg"
               />
             </div>
@@ -55,7 +120,7 @@ export default function Home() {
               <div className="text-3xl lg:text-5xl font-bold text-inherit">
                 Sahil Saha
               </div>
-              <div className="text-xl lg:text-2xl mt-2">Codes for fun</div>
+              <div className="text-sm lg:text-xl mt-2">Software Engineer</div>
               <div className="flex gap-3 lg:gap-5 mt-5">
                 <Button
                   isIconOnly
@@ -83,7 +148,7 @@ export default function Home() {
                 >
                   <FaGithub />
                 </Button>
-                <Button
+                {/* <Button
                   isIconOnly
                   color="default"
                   className="text-xl lg:text-3xl"
@@ -93,7 +158,7 @@ export default function Home() {
                   }}
                 >
                   <FaInstagram />
-                </Button>
+                </Button> */}
                 <Button
                   isIconOnly
                   color="default"
@@ -152,17 +217,17 @@ export default function Home() {
                 alt="python logo"
               />
 
-              <Image
+              {/* <Image
                 src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg"
                 width="40"
                 alt="csharp logo"
-              />
+              /> */}
 
-              <Image
+              {/* <Image
                 src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg"
                 width="40"
                 alt="php logo"
-              />
+              /> */}
 
               <Image
                 src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg"
@@ -198,47 +263,20 @@ export default function Home() {
           {"Places I have worked at"}
         </div>
         <div className="flex flex-wrap justify-center lg:justify-normal gap-10 mt-5">
-          <WorkCard
-            name="Let's Dive"
-            time="Nov 23 - Feb 24"
-            image="Dive.png"
-            imageWidth={150}
-            imageHeight={150}
-            description="Revamped React front end pages, fixed bugs and added new features to prod which improved the user experience
-            significantly while collaborating with the backend team to integrate APIs."
-            tech={["React", "TypeScript", "JavaScript", "CSS", "HTML", "Redux"]}
-          />
-          <WorkCard
-            name="Appwrite"
-            time="May 23 - Aug 23"
-            image="appwrite2.svg"
-            imageWidth={80}
-            imageHeight={150}
-            description="Created a lite and fast open-source micro PHP library that provides a convenient and flexible way to perform HTTP
-            requests in PHP applications and will be used everywhere in Appwrite.
-            Worked on the appwrite SDK generator and updated the API specs to include error types constants in all the SDKs."
-            tech={["PHP"]}
-          />
-          <WorkCard
-            name="Urban Ladder"
-            time="Aug 22 - Nov 22"
-            image="urbanLadder.svg"
-            imageWidth={150}
-            imageHeight={150}
-            description="Integrated jaegar request tracing across microservices which helped to monitor and troubleshoot problems across services."
-            tech={["Ruby on Rails"]}
-          />
-          <WorkCard
-            name="TruckX"
-            time="Feb 22 - Aug 22"
-            image="truckxLogo.png"
-            imageWidth={150}
-            imageHeight={150}
-            description={`Written microservices to support new types of IOT tracking devices.
-        ${"\n"}Developed parsers for data that were sent from IOT devices that follows new communication protocols and fixed bugs of
-            multiple microservices.`}
-            tech={["Python", "Microservices", "Docker", "Kubernetes"]}
-          />
+          {workExperiences.map((experience) => (
+            <WorkCard
+              key={experience.name}
+              name={experience.name}
+              time={experience.time}
+              image={experience.image}
+              imageWidth={experience.imageWidth}
+              imageHeight={experience.imageHeight}
+              description={experience.description}
+              tech={experience.tech}
+              role={experience.role}
+              isIntern={experience.isIntern}
+            />
+          ))}
         </div>
       </div>
       <Divider />

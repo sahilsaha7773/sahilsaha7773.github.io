@@ -17,61 +17,14 @@ import {
 } from "@nextui-org/react";
 import { FaRegEye } from "react-icons/fa";
 
-const WorkModal = ({
-  isOpen,
-  onOpenChange,
-}: {
-  isOpen: boolean;
-  onOpenChange: () => void;
-}) => {
-  return (
-    <Modal isOpen={isOpen} onOpenChange={onOpenChange}>
-      <ModalContent>
-        {(onClose) => (
-          <>
-            <ModalHeader className="flex flex-col gap-1">
-              Modal Title
-            </ModalHeader>
-            <ModalBody>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
-                pulvinar risus non risus hendrerit venenatis. Pellentesque sit
-                amet hendrerit risus, sed porttitor quam.
-              </p>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
-                pulvinar risus non risus hendrerit venenatis. Pellentesque sit
-                amet hendrerit risus, sed porttitor quam.
-              </p>
-              <p>
-                Magna exercitation reprehenderit magna aute tempor cupidatat
-                consequat elit dolor adipisicing. Mollit dolor eiusmod sunt ex
-                incididunt cillum quis. Velit duis sit officia eiusmod Lorem
-                aliqua enim laboris do dolor eiusmod. Et mollit incididunt nisi
-                consectetur esse laborum eiusmod pariatur proident Lorem eiusmod
-                et. Culpa deserunt nostrud ad veniam.
-              </p>
-            </ModalBody>
-            <ModalFooter>
-              <Button color="danger" variant="light" onPress={onClose}>
-                Close
-              </Button>
-              <Button color="primary" onPress={onClose}>
-                Action
-              </Button>
-            </ModalFooter>
-          </>
-        )}
-      </ModalContent>
-    </Modal>
-  );
-};
 const WorkCard = ({
   name,
   time,
   image,
   imageWidth,
   imageHeight,
+  role,
+  isIntern,
   tech,
   description,
 }: {
@@ -80,8 +33,10 @@ const WorkCard = ({
   image: string;
   imageWidth: number;
   imageHeight: number;
+  role: string;
+  isIntern?: boolean;
   tech: string[];
-  description: string;
+  description: React.ReactNode;
 }) => {
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
 
@@ -93,6 +48,7 @@ const WorkCard = ({
             <>
               <ModalHeader className="flex flex-col gap-1">
                 {name}
+                <span className="text-xs text-gray-500">{role}</span>
               </ModalHeader>
               <ModalBody>
                 <div className="flex items-center flex-wrap gap-2">
@@ -102,8 +58,8 @@ const WorkCard = ({
                         key={t}
                         className=""
                         color="default"
-                        // size="mini"
-                        // label={t}
+                      // size="mini"
+                      // label={t}
                       >
                         {t}
                       </Chip>
@@ -121,7 +77,7 @@ const WorkCard = ({
           )}
         </ModalContent>
       </Modal>
-      <Tooltip content="Software Engineer Intern" placement="top-end">
+      <Tooltip content={role} placement="top-end">
         <Card className="py-4 px-4 w-full md:w-fit lg:w-fit">
           <CardBody className="overflow-visible py-2">
             <Image
