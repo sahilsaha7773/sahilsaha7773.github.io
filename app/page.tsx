@@ -32,12 +32,12 @@ export default function Home() {
       role: "Software Development Engineer I",
       description: (
         <div>
-          • Revamped legacy React.js + Redux frontend, resulting in a significant improvement in page load times and a high reduction in UI‑related bugs.<br /><br />
-          • Took full ownership of the front‑end codebase, resolving 90% of on‑call tickets within SLA.<br /><br />
-          • Migrated front‑end build system from CRA to Rsbuild, cutting build and debugging times by over 50%.<br /><br />
+          • Revamped legacy React.js + Redux frontend, resulting in a significant improvement in page load times and a high reduction in UI‑related bugs.<br />
+          • Took full ownership of the front‑end codebase, resolving 90% of on‑call tickets within SLA.<br />
+          • Migrated front‑end build system from CRA to Rsbuild, cutting build and debugging times by over 50%.<br />
           • Built robust, event‑driven backend features by leveraging AWS SQS and SNS for decoupled service communication and enhanced fault toler‑
-          ance in distributed systems.<br /><br />
-          • Developed backend services using NestJS, TypeScript and PostgreSQL, supporting migration from monolith to microservices.<br /><br />
+          ance in distributed systems.<br />
+          • Developed backend services using NestJS, TypeScript and PostgreSQL, supporting migration from monolith to microservices.<br />
           • Delivered 2+ internal full‑stack tools to automate operational tasks, reducing manual workload by 90%.
         </div>
       ),
@@ -120,7 +120,7 @@ export default function Home() {
               <div className="text-3xl lg:text-5xl font-bold text-inherit">
                 Sahil Saha
               </div>
-              <div className="text-sm lg:text-xl mt-2">Software Engineer</div>
+              <div className="text-xl lg:text-2xl mt-2">Software Engineer</div>
               <div className="flex gap-3 lg:gap-5 mt-5">
                 <Button
                   isIconOnly

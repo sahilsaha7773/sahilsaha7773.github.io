@@ -43,15 +43,13 @@ const WorkCard = ({
   return (
     <>
       <Modal isOpen={isOpen} onOpenChange={onOpenChange}>
-        <ModalContent>
+        <ModalContent className="max-h-[80%]">
           {(onClose) => (
             <>
               <ModalHeader className="flex flex-col gap-1">
                 {name}
                 <span className="text-xs text-gray-500">{role}</span>
-              </ModalHeader>
-              <ModalBody>
-                <div className="flex items-center flex-wrap gap-2">
+                <div className="flex items-center flex-wrap gap-2 mt-2">
                   {tech.map((t) => {
                     return (
                       <Chip
@@ -66,6 +64,8 @@ const WorkCard = ({
                     );
                   })}
                 </div>
+              </ModalHeader>
+              <ModalBody className="overflow-y-auto">
                 <p>{description}</p>
               </ModalBody>
               <ModalFooter>
